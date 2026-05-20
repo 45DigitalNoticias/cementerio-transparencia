@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Flyers para Facebook — Cementerio de la Transparencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0c0e;
+    --ink: #e8e3d6;
+    --ink-dim: #9a9384;
+    --cempasuchil: #f5a623;
+    --cempasuchil-claro: #ffc857;
+    --papel-rosa: #e91e63;
+    --papel-turq: #00bcd4;
+    --calavera: #f5e6d3;
+    --sangre: #a01818;
+    --sepia: #b89968;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #2a2a2a;
+    padding: 40px;
+    font-family: 'Lora', Georgia, serif;
+    min-height: 100vh;
+  }
+  .instructions {
+    max-width: 1080px;
+    margin: 0 auto 40px;
+    color: #e8e3d6;
+    background: #1a1a1a;
+    padding: 24px 32px;
+    border-left: 3px solid var(--cempasuchil);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .instructions h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--cempasuchil);
+    margin-bottom: 12px;
+  }
+  .instructions code {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(245,166,35,0.1);
+    padding: 2px 6px;
+    color: var(--cempasuchil-claro);
+  }
+  .flyer-label {
+    max-width: 1080px;
+    margin: 0 auto 8px;
+    color: var(--cempasuchil);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .flyer {
+    width: 1080px;
+    height: 1080px;
+    margin: 0 auto 56px;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    color: var(--ink);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(245, 166, 35, 0.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 100%, rgba(233, 30, 99, 0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, rgba(184, 153, 104, 0.03) 0%, transparent 60%);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  /* Papel picado decoraciones */
+  .papel-picado-top, .papel-picado-bottom {
+    position: absolute;
+    left: 0; right: 0;
+    height: 56px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='56' viewBox='0 0 180 56'><g><path d='M0 0 L180 0 L180 8 L0 8 Z' fill='%23f5a623'/><path d='M10 8 L30 36 L50 8 Z M40 8 L60 36 L80 8 Z M70 8 L90 36 L110 8 Z M100 8 L120 36 L140 8 Z M130 8 L150 36 L170 8 Z' fill='%23f5a623'/><circle cx='30' cy='20' r='3' fill='%230c0c0e'/><circle cx='60' cy='20' r='3' fill='%230c0c0e'/><circle cx='90' cy='20' r='3' fill='%230c0c0e'/><circle cx='120' cy='20' r='3' fill='%230c0c0e'/><circle cx='150' cy='20' r='3' fill='%230c0c0e'/></g></svg>");
+    background-repeat: repeat-x;
+  }
+  .papel-picado-top { top: 0; }
+  .papel-picado-bottom { bottom: 0; transform: scaleY(-1); }
+
+  .firma-bottom {
+    position: absolute;
+    bottom: 80px;
+    left: 0; right: 0;
+    text-align: center;
+  }
+  .firma-bottom .marca {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cempasuchil);
+    margin-bottom: 8px;
+  }
+  .firma-bottom .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--ink-dim);
+    letter-spacing: 0.06em;
+  }
+
+  /* Cempasúchil decoration */
+  .flor {
+    position: absolute;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40'><g><circle cx='20' cy='6' r='6' fill='%23ff8c00'/><circle cx='32' cy='12' r='5.5' fill='%23ff8c00'/><circle cx='35' cy='22' r='5' fill='%23ff8c00'/><circle cx='32' cy='30' r='5.5' fill='%23ff8c00'/><circle cx='20' cy='34' r='6' fill='%23ff8c00'/><circle cx='8' cy='30' r='5.5' fill='%23ff8c00'/><circle cx='5' cy='22' r='5' fill='%23ff8c00'/><circle cx='8' cy='12' r='5.5' fill='%23ff8c00'/><circle cx='20' cy='14' r='5' fill='%23f5a623'/><circle cx='27' cy='18' r='4.5' fill='%23f5a623'/><circle cx='27' cy='26' r='4.5' fill='%23f5a623'/><circle cx='20' cy='30' r='5' fill='%23f5a623'/><circle cx='13' cy='26' r='4.5' fill='%23f5a623'/><circle cx='13' cy='18' r='4.5' fill='%23f5a623'/><circle cx='20' cy='22' r='6' fill='%23ffc857'/><circle cx='20' cy='22' r='3' fill='%23a05a0a'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* Calavera de azúcar */
+  .calaverita {
+    position: absolute;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32' width='28' height='32'><g><path d='M14 2 Q3 2 3 14 Q3 21 8 26 L8 28 L11 28 L11 26 L17 26 L17 28 L20 28 L20 26 Q25 21 25 14 Q25 2 14 2 Z' fill='%23f5e6d3' stroke='%23000' stroke-width='0.6'/><ellipse cx='9' cy='12' rx='2.2' ry='3' fill='%230c0c0e'/><ellipse cx='19' cy='12' rx='2.2' ry='3' fill='%230c0c0e'/><circle cx='9' cy='12' r='1.2' fill='%23e91e63'/><circle cx='19' cy='12' r='1.2' fill='%239c27b0'/><path d='M14 15 L12.5 19 L14 20 L15.5 19 Z' fill='%230c0c0e'/><circle cx='14' cy='7' r='1.4' fill='%23e91e63'/><circle cx='8' cy='8' r='0.9' fill='%2300bcd4'/><circle cx='20' cy='8' r='0.9' fill='%23ffc857'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* ===================================================================
+     FLYER 1 — ANUNCIO
+     =================================================================== */
+  .flyer-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 80px;
+    text-align: center;
+  }
+  .flyer-1 .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 56px;
+  }
+  .flyer-1 .titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 0.92;
+    color: var(--ink);
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+  .flyer-1 .subt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--cempasuchil);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+  }
+  .flyer-1 .tagline {
+    font-style: italic;
+    font-size: 30px;
+    color: var(--ink-dim);
+    max-width: 760px;
+    line-height: 1.45;
+  }
+  .flyer-1 .flor-1 { width: 90px; height: 90px; top: 130px; left: 100px; transform: rotate(-15deg); }
+  .flyer-1 .flor-2 { width: 90px; height: 90px; top: 130px; right: 100px; transform: rotate(15deg); }
+  .flyer-1 .flor-3 { width: 70px; height: 70px; bottom: 220px; left: 180px; transform: rotate(20deg); }
+  .flyer-1 .flor-4 { width: 70px; height: 70px; bottom: 220px; right: 180px; transform: rotate(-20deg); }
+
+  /* ===================================================================
+     FLYER 2 — 99.6 %
+     =================================================================== */
+  .flyer-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 80px 180px;
+    text-align: center;
+  }
+  .flyer-2 .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 40px;
+  }
+  .flyer-2 .cifra {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 360px;
+    line-height: 0.85;
+    color: var(--cempasuchil);
+    margin-bottom: 40px;
+    text-shadow: 0 8px 30px rgba(245,166,35,0.3);
+    letter-spacing: -0.02em;
+  }
+  .flyer-2 .titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    line-height: 1.18;
+    color: var(--ink);
+    margin-bottom: 28px;
+    max-width: 820px;
+  }
+  .flyer-2 .titulo strong { color: var(--ink); }
+  .flyer-2 .pie {
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ink-dim);
+    margin-bottom: 18px;
+  }
+  .flyer-2 .fuente {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--cempasuchil-claro);
+    text-transform: uppercase;
+  }
+
+  /* ===================================================================
+     FLYER 3 — 4,599 ALMAS
+     =================================================================== */
+  .flyer-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 80px 200px;
+    text-align: center;
+  }
+  .flyer-3 .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 32px;
+  }
+  .flyer-3 .cifra {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 240px;
+    line-height: 0.9;
+    color: var(--cempasuchil);
+    margin-bottom: 24px;
+    text-shadow: 0 8px 30px rgba(245,166,35,0.3);
+  }
+  .flyer-3 .etiqueta {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--ink);
+    margin-bottom: 56px;
+    letter-spacing: 0.04em;
+  }
+  .flyer-3 .descripcion {
+    font-size: 24px;
+    color: var(--ink-dim);
+    margin-bottom: 50px;
+    max-width: 760px;
+    line-height: 1.4;
+  }
+  .flyer-3 .punch {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 38px;
+    line-height: 1.35;
+    color: var(--cempasuchil-claro);
+  }
+  .flyer-3 .punch span { display: block; }
+  .flyer-3 .calaverita-1 { width: 60px; height: 70px; top: 140px; left: 130px; transform: rotate(-8deg); }
+  .flyer-3 .calaverita-2 { width: 60px; height: 70px; top: 140px; right: 130px; transform: rotate(8deg); }
+  .flyer-3 .calaverita-3 { width: 50px; height: 58px; bottom: 230px; left: 240px; transform: rotate(-12deg); }
+  .flyer-3 .calaverita-4 { width: 50px; height: 58px; bottom: 230px; right: 240px; transform: rotate(12deg); }
+
+  /* ===================================================================
+     FLYER 4 — LÁPIDA CON NOMBRE (también será og-image)
+     =================================================================== */
+  .flyer-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 80px 180px;
+    text-align: center;
+  }
+  .flyer-4 .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 40px;
+  }
+  .flyer-4 .lapida-visual {
+    width: 280px;
+    height: 360px;
+    background: linear-gradient(180deg, #4c4c54 0%, #38383f 18%, #2a2a30 45%, #1a1a20 75%, #0e0e14 100%);
+    border-radius: 50% 50% 4px 4px / 30% 30% 4px 4px;
+    box-shadow:
+      inset 0 3px 6px rgba(255,255,255,0.06),
+      inset 0 -10px 24px rgba(0,0,0,0.55),
+      0 22px 44px rgba(0,0,0,0.75);
+    border: 1px solid rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 90px;
+    margin-bottom: 60px;
+    position: relative;
+  }
+  .flyer-4 .lapida-visual::before {
+    content: "†";
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: rgba(232, 227, 214, 0.4);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 -1px 0 rgba(0,0,0,0.85);
+  }
+  .flyer-4 .lapida-visual .nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: rgba(232, 227, 214, 0.92);
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: 1.1;
+    padding: 0 20px;
+  }
+  .flyer-4 .lapida-visual .fecha {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: rgba(154, 147, 132, 0.85);
+    margin-top: 18px;
+    letter-spacing: 0.14em;
+  }
+  .flyer-4 .lapida-visual .cempasuchil-pie {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 24' width='200' height='24'><g><circle cx='20' cy='14' r='9' fill='%23ff8c00'/><circle cx='20' cy='14' r='5' fill='%23ffc857'/><circle cx='20' cy='14' r='2' fill='%23a05a0a'/><circle cx='50' cy='12' r='7' fill='%23ff8c00'/><circle cx='50' cy='12' r='4' fill='%23ffc857'/><circle cx='80' cy='14' r='10' fill='%23ff8c00'/><circle cx='80' cy='14' r='6' fill='%23f5a623'/><circle cx='80' cy='14' r='3' fill='%23ffc857'/><circle cx='80' cy='14' r='1.5' fill='%23a05a0a'/><circle cx='110' cy='12' r='7' fill='%23ff8c00'/><circle cx='110' cy='12' r='4' fill='%23ffc857'/><circle cx='140' cy='13' r='8' fill='%23ff8c00'/><circle cx='140' cy='13' r='4' fill='%23ffc857'/><circle cx='140' cy='13' r='2' fill='%23a05a0a'/><circle cx='170' cy='14' r='9' fill='%23ff8c00'/><circle cx='170' cy='14' r='5' fill='%23ffc857'/><circle cx='170' cy='14' r='2' fill='%23a05a0a'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .flyer-4 .punch {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: 0.01em;
+    max-width: 880px;
+  }
+  .flyer-4 .punch-2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 48px;
+    color: var(--cempasuchil);
+    margin-bottom: 32px;
+  }
+  .flyer-4 .descripcion {
+    font-size: 22px;
+    line-height: 1.42;
+    color: var(--ink-dim);
+    max-width: 800px;
+    font-style: italic;
+  }
+
+  /* ===================================================================
+     FLYER 5 — CALAVERITA LITERARIA
+     =================================================================== */
+  .flyer-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 100px 180px;
+    text-align: center;
+  }
+  .flyer-5 .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 24px;
+  }
+  .flyer-5 .titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 56px;
+    letter-spacing: 0.02em;
+  }
+  .flyer-5 .versos {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.45;
+    color: var(--cempasuchil-claro);
+    margin-bottom: 30px;
+  }
+  .flyer-5 .versos p { margin-bottom: 24px; }
+  .flyer-5 .versos p:last-child { margin-bottom: 0; }
+  .flyer-5 .versos em {
+    color: var(--ink);
+    font-style: italic;
+  }
+  .flyer-5 .calaverita-decora { width: 80px; height: 92px; top: 110px; right: 130px; transform: rotate(8deg); }
+  .flyer-5 .flor-decora { width: 80px; height: 80px; top: 110px; left: 130px; transform: rotate(-15deg); }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .instructions, .flyer-label { display: none; }
+    .flyer { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="instructions">
+  <h1>Cinco flyers para Facebook</h1>
+  <p><strong>Tamaño:</strong> 1080 × 1080 px (cuadrado, ideal para feed de Facebook e Instagram).</p>
+  <p><strong>Cómo capturar cada uno:</strong></p>
+  <ol style="margin: 12px 0 12px 20px;">
+    <li>Abre las herramientas de desarrollador del navegador (F12).</li>
+    <li>Pestaña <code>Application</code> o usa <code>Ctrl + Shift + P</code> y escribe <em>"Capture full size screenshot"</em>.</li>
+    <li>O, más simple: usa la extensión <em>"GoFullPage"</em> o <em>"FireShot"</em>, o haz <code>Win + Shift + S</code> y selecciona la zona del flyer.</li>
+  </ol>
+  <p><strong>Recomendación específica:</strong> el <em>Flyer 4 — Lápida con nombre</em> es el que mejor funciona como <code>og-image.png</code> (la imagen que aparece al compartir la URL en Facebook). Cuando lo captures, guárdalo también con ese nombre en la raíz del repo, súbelo, y aparecerá preview al compartir.</p>
+  <p><strong>Tip:</strong> antes de capturar, pon zoom del navegador al 100% (Ctrl + 0) para que el tamaño en pixeles sea exacto.</p>
+</div>
+
+<!-- ===================== FLYER 1 ===================== -->
+<div class="flyer-label">Flyer 1 · Anuncio</div>
+<div class="flyer flyer-1">
+  <div class="papel-picado-top"></div>
+  <div class="flor flor-1"></div>
+  <div class="flor flor-2"></div>
+  <p class="eyebrow">Expediente · 45 Digital Noticias</p>
+  <h1 class="titulo">El Cementerio<br>de la Transparencia</h1>
+  <div class="subt">Morelos · 2026</div>
+  <p class="tagline">Aquí yacen los sitios oficiales que, por ley, debían estar vivos.</p>
+  <div class="flor flor-3"></div>
+  <div class="flor flor-4"></div>
+  <div class="firma-bottom">
+    <div class="marca">45 Digital Noticias.</div>
+    <div class="url">45digitalnoticias.github.io/cementerio-transparencia</div>
+  </div>
+  <div class="papel-picado-bottom"></div>
+</div>
+
+<!-- ===================== FLYER 2 ===================== -->
+<div class="flyer-label">Flyer 2 · La cifra brutal</div>
+<div class="flyer flyer-2">
+  <div class="papel-picado-top"></div>
+  <p class="eyebrow">Transparencia para el Pueblo · primeros 3 meses</p>
+  <div class="cifra">99.6%</div>
+  <h2 class="titulo">De las quejas ciudadanas son <strong>desechadas</strong> por el organismo federal que reemplazó al INAI.</h2>
+  <p class="pie">Y los desechan por tecnicismos. No por sustancia.</p>
+  <p class="fuente">Fuente: Artículo 19 · 2025</p>
+  <div class="firma-bottom">
+    <div class="marca">45 Digital Noticias.</div>
+    <div class="url">45digitalnoticias.github.io/cementerio-transparencia</div>
+  </div>
+  <div class="papel-picado-bottom"></div>
+</div>
+
+<!-- ===================== FLYER 3 ===================== -->
+<div class="flyer-label">Flyer 3 · La cifra humana</div>
+<div class="flyer flyer-3">
+  <div class="papel-picado-top"></div>
+  <div class="calaverita calaverita-1"></div>
+  <div class="calaverita calaverita-2"></div>
+  <p class="eyebrow">IMIPE · al cerrar el instituto, enero 2026</p>
+  <div class="cifra">4,599</div>
+  <div class="etiqueta">quejas ciudadanas</div>
+  <p class="descripcion">que no alcanzó a resolver el órgano garante autónomo de Morelos antes de ser extinguido por decreto.</p>
+  <div class="punch">
+    <span>Sin velorio.</span>
+    <span>Sin chocolate.</span>
+    <span>Sin pan de muerto.</span>
+  </div>
+  <div class="calaverita calaverita-3"></div>
+  <div class="calaverita calaverita-4"></div>
+  <div class="firma-bottom">
+    <div class="marca">45 Digital Noticias.</div>
+    <div class="url">45digitalnoticias.github.io/cementerio-transparencia</div>
+  </div>
+  <div class="papel-picado-bottom"></div>
+</div>
+
+<!-- ===================== FLYER 4 — para og-image ===================== -->
+<div class="flyer-label">Flyer 4 · La metáfora-síntesis · usar también como og-image.png</div>
+<div class="flyer flyer-4">
+  <div class="papel-picado-top"></div>
+  <p class="eyebrow">El órgano federal que reemplazó al INAI</p>
+  <div class="lapida-visual">
+    <div class="nombre">TRANSPARENCIA<br>PARA EL PUEBLO</div>
+    <div class="fecha">2025 — ¿?</div>
+    <div class="cempasuchil-pie"></div>
+  </div>
+  <h2 class="punch">Le pusieron lápida con nombre.</h2>
+  <p class="punch-2">Faltó el difunto.</p>
+  <p class="descripcion">El organismo publicó un plan para ser transparente. La primera fecha de cumplimiento era mayo de 2026. No publicó los datos.</p>
+  <div class="firma-bottom">
+    <div class="marca">45 Digital Noticias.</div>
+    <div class="url">45digitalnoticias.github.io/cementerio-transparencia</div>
+  </div>
+  <div class="papel-picado-bottom"></div>
+</div>
+
+<!-- ===================== FLYER 5 — CALAVERITA ===================== -->
+<div class="flyer-label">Flyer 5 · Cierre poético (ideal para 1 o 2 de noviembre)</div>
+<div class="flyer flyer-5">
+  <div class="papel-picado-top"></div>
+  <div class="flor flor-decora"></div>
+  <div class="calaverita calaverita-decora"></div>
+  <p class="eyebrow">Calaverita literaria · 2026</p>
+  <h2 class="titulo">A la transparencia<br>que ya no responde</h2>
+  <div class="versos">
+    <p>Vino la muerte temprano,<br>con falda de cempasúchil,<br>buscando al señor INAI<br>para llevárselo a su gusto.</p>
+    <p><em>"Vienes tarde, comadrita"</em><br>— le contestó el comisionado —<br><em>"a éste lo extinguió un decreto<br>antes que tu propio dardo."</em></p>
+  </div>
+  <div class="firma-bottom">
+    <div class="marca">45 Digital Noticias.</div>
+    <div class="url">45digitalnoticias.github.io/cementerio-transparencia</div>
+  </div>
+  <div class="papel-picado-bottom"></div>
+</div>
+
+</body>
+</html>
