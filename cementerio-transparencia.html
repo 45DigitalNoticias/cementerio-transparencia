@@ -1,0 +1,2962 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Cementerio de la Transparencia — Morelos 2026 · 45 Digital Noticias</title>
+<meta name="description" content="Inventario visual de los sitios oficiales del gobierno de Morelos que, por ley, debían estar vivos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;600&family=Creepster&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Base nocturna */
+    --bg: #0c0c0e;
+    --bg-card: #16161a;
+    --bg-card-elev: #1c1c22;
+    --ink: #e8e3d6;
+    --ink-dim: #9a9384;
+    --rule: #2a2a32;
+    --gold: #c9a449;
+    --sepia: #b89968;
+    --concrete: #6b6b6b;
+
+    /* Día de Muertos — acentos */
+    --cempasuchil: #f5a623;
+    --cempasuchil-claro: #ffc857;
+    --papel-rosa: #e91e63;
+    --papel-turq: #00bcd4;
+    --papel-violeta: #9c27b0;
+    --papel-verde: #66bb6a;
+    --calavera: #f5e6d3;
+    --sangre: #a01818;
+    --alarma: #d4a017;
+    --funciona: #66bb6a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(245, 166, 35, 0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 100%, rgba(233, 30, 99, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, rgba(184, 153, 104, 0.02) 0%, transparent 60%);
+    overflow-x: hidden;
+  }
+
+  /* ========================= PAPEL PICADO ========================= */
+  .papel-picado {
+    width: 100%;
+    height: 56px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='56' viewBox='0 0 180 56'><g><path d='M0 0 L180 0 L180 8 L0 8 Z' fill='%23f5a623'/><path d='M10 8 L30 36 L50 8 Z M40 8 L60 36 L80 8 Z M70 8 L90 36 L110 8 Z M100 8 L120 36 L140 8 Z M130 8 L150 36 L170 8 Z' fill='%23f5a623'/><circle cx='30' cy='20' r='3' fill='%230c0c0e'/><circle cx='60' cy='20' r='3' fill='%230c0c0e'/><circle cx='90' cy='20' r='3' fill='%230c0c0e'/><circle cx='120' cy='20' r='3' fill='%230c0c0e'/><circle cx='150' cy='20' r='3' fill='%230c0c0e'/></g></svg>");
+    background-repeat: repeat-x;
+    background-position: top center;
+    margin-bottom: 0;
+  }
+  .papel-picado--rosa { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='56' viewBox='0 0 180 56'><g><path d='M0 0 L180 0 L180 8 L0 8 Z' fill='%23e91e63'/><path d='M10 8 L30 36 L50 8 Z M40 8 L60 36 L80 8 Z M70 8 L90 36 L110 8 Z M100 8 L120 36 L140 8 Z M130 8 L150 36 L170 8 Z' fill='%23e91e63'/><circle cx='30' cy='20' r='3' fill='%230c0c0e'/><circle cx='60' cy='20' r='3' fill='%230c0c0e'/><circle cx='90' cy='20' r='3' fill='%230c0c0e'/><circle cx='120' cy='20' r='3' fill='%230c0c0e'/><circle cx='150' cy='20' r='3' fill='%230c0c0e'/></g></svg>"); }
+  .papel-picado--turq { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='56' viewBox='0 0 180 56'><g><path d='M0 0 L180 0 L180 8 L0 8 Z' fill='%2300bcd4'/><path d='M10 8 L30 36 L50 8 Z M40 8 L60 36 L80 8 Z M70 8 L90 36 L110 8 Z M100 8 L120 36 L140 8 Z M130 8 L150 36 L170 8 Z' fill='%2300bcd4'/><circle cx='30' cy='20' r='3' fill='%230c0c0e'/><circle cx='60' cy='20' r='3' fill='%230c0c0e'/><circle cx='90' cy='20' r='3' fill='%230c0c0e'/><circle cx='120' cy='20' r='3' fill='%230c0c0e'/><circle cx='150' cy='20' r='3' fill='%230c0c0e'/></g></svg>"); }
+
+  /* ========================= WRAP ========================= */
+  .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+
+  /* ========================= HEADER ========================= */
+  header.titular {
+    text-align: center;
+    padding: 70px 0 40px;
+    position: relative;
+  }
+  header.titular .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--cempasuchil);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  header.titular h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(40px, 7vw, 78px);
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  header.titular h1 .small {
+    display: block;
+    font-size: 0.45em;
+    color: var(--cempasuchil);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    font-weight: 500;
+  }
+  header.titular .calaveritas {
+    font-size: 32px;
+    letter-spacing: 0.5em;
+    margin: 16px 0 24px;
+    color: var(--calavera);
+    opacity: 0.7;
+  }
+  header.titular .tagline {
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin: 0 auto 28px;
+  }
+  header.titular .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    letter-spacing: 0.08em;
+  }
+  header.titular .meta span { color: var(--cempasuchil); }
+
+  /* ========================= NAV TABS ========================= */
+  nav.tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(12, 12, 14, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    margin: 0 -28px 56px;
+    overflow-x: auto;
+  }
+  nav.tabs .tabs-inner {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    min-width: max-content;
+    padding: 0 28px;
+  }
+  nav.tabs button {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-dim);
+    padding: 9px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+  nav.tabs button:hover {
+    color: var(--ink);
+    border-color: var(--cempasuchil);
+  }
+  nav.tabs button.active {
+    background: var(--cempasuchil);
+    color: #1a1a1e;
+    border-color: var(--cempasuchil);
+    font-weight: 600;
+  }
+
+  /* ========================= SECTION ========================= */
+  section.contenido {
+    display: none;
+    animation: fadein 0.3s ease;
+  }
+  section.contenido.activa { display: block; }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h2.seccion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    margin: 24px 0 8px;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  h2.seccion::before, h2.seccion::after {
+    content: "❀";
+    color: var(--cempasuchil);
+    font-size: 24px;
+    margin: 0 18px;
+    opacity: 0.7;
+    vertical-align: middle;
+  }
+  h2.seccion + .sub-seccion {
+    text-align: center;
+    color: var(--ink-dim);
+    font-style: italic;
+    margin-bottom: 48px;
+    font-size: 16px;
+  }
+
+  /* ========================= MARCADOR VIVO DEL EXPEDIENTE ========================= */
+  .marcador-expediente {
+    max-width: 900px;
+    margin: 0 auto 56px;
+    padding: 36px 40px;
+    background:
+      linear-gradient(135deg, rgba(245, 166, 35, 0.06), rgba(160, 24, 24, 0.04)),
+      var(--bg-card);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--cempasuchil);
+    position: relative;
+  }
+  .marcador-expediente::before {
+    /* Pequeña veladora arriba a la izquierda */
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    width: 14px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 24' width='14' height='24'><g><rect x='4' y='8' width='6' height='14' fill='%23d4a449' stroke='%23000' stroke-width='0.4'/><rect x='3' y='20' width='8' height='2' fill='%238b6914'/><ellipse cx='7' cy='5' rx='2' ry='3.5' fill='%23ffeb3b'/><ellipse cx='7' cy='6' rx='1.2' ry='2.4' fill='%23ff9800'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 152, 0, 0.55));
+    animation: parpadeo 0.55s ease-in-out infinite alternate;
+  }
+
+  .marcador-header {
+    border-bottom: 1px dashed var(--rule);
+    padding-bottom: 24px;
+    margin-bottom: 26px;
+  }
+  .marcador-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 18px;
+  }
+  .marcador-eyebrow span {
+    color: var(--ink-dim);
+    text-transform: none;
+    letter-spacing: 0.08em;
+  }
+  .marcador-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+  }
+  .marcador-titulo .cifra-grande {
+    font-size: 56px;
+    color: var(--cempasuchil);
+    font-weight: 700;
+    vertical-align: -8px;
+    padding: 0 6px;
+    text-shadow: 0 2px 6px rgba(245, 166, 35, 0.25);
+  }
+  .marcador-titulo strong { color: var(--cempasuchil-claro); font-weight: 600; }
+  .marcador-sub {
+    font-size: 15.5px;
+    color: var(--ink-dim);
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.6;
+  }
+  .marcador-sub strong { color: var(--ink); font-weight: 600; }
+  .marcador-sub span { color: var(--cempasuchil-claro); font-weight: 600; }
+
+  .marcador-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 640px) {
+    .marcador-kpis { grid-template-columns: 1fr; }
+  }
+  .kpi {
+    background: rgba(0,0,0,0.32);
+    border: 1px solid var(--rule);
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .kpi-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .kpi-label span { color: var(--cempasuchil); font-weight: 600; }
+  .kpi-verde { border-left: 3px solid var(--funciona); }
+  .kpi-verde .kpi-numero { color: var(--funciona); }
+  .kpi-rojo { border-left: 3px solid var(--sangre); }
+  .kpi-rojo .kpi-numero { color: var(--sangre); }
+
+  .marcador-barra { margin-bottom: 28px; }
+  .barra-track {
+    display: flex;
+    height: 18px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .barra-fill { height: 100%; transition: width 0.6s ease; }
+  .barra-fallan { background: linear-gradient(90deg, var(--sangre), #6b1010); }
+  .barra-funcionan { background: linear-gradient(90deg, var(--funciona), #4a8a3f); }
+  .barra-leyenda {
+    display: flex;
+    gap: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+    flex-wrap: wrap;
+  }
+  .leyenda-item { display: flex; align-items: center; gap: 8px; }
+  .punto {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .punto-rojo { background: var(--sangre); }
+  .punto-verde { background: var(--funciona); }
+
+  .marcador-detalle {
+    border-top: 1px dashed var(--rule);
+    padding-top: 22px;
+  }
+  .marcador-detalle-titulo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 14px;
+  }
+  .marcador-detalle-titulo span {
+    color: var(--cempasuchil);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .detalle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+  }
+  .detalle-item {
+    background: rgba(0,0,0,0.28);
+    border-left: 2px solid var(--ink-dim);
+    padding: 11px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .detalle-item .nombre {
+    font-family: 'Lora', serif;
+    font-size: 13.5px;
+    color: var(--ink-dim);
+  }
+  .detalle-item .cuenta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .detalle-item.extinto    { border-left-color: var(--sepia); }
+  .detalle-item.cascaron   { border-left-color: var(--gold); }
+  .detalle-item.caido      { border-left-color: var(--sangre); }
+  .detalle-item.bloqueado  { border-left-color: var(--rust); }
+  .detalle-item.inseguro   { border-left-color: var(--alarma); }
+  .detalle-item.inexistente { border-left-color: var(--ink-dim); }
+
+  /* ========================= MANIFIESTO ========================= */
+  .apertura {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    padding: 36px 40px;
+    border-left: 2px solid var(--cempasuchil);
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.04), transparent);
+  }
+  .apertura p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .apertura p:last-child { margin-bottom: 0; }
+  .apertura .cita {
+    font-style: italic;
+    color: var(--cempasuchil-claro);
+    font-size: 17px;
+    padding-left: 20px;
+    border-left: 2px solid var(--rule);
+    margin: 20px 0;
+    text-align: justify;
+  }
+  .apertura .cita cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    text-align: left;
+  }
+  .apertura strong { color: var(--ink); }
+
+  /* ========================= COLUMNA EDITORIAL ========================= */
+  .columna-editorial {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+  .columna-header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px dashed var(--rule);
+    position: relative;
+  }
+  .columna-header::after {
+    content: "❀";
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    color: var(--cempasuchil);
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  .columna-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 24px;
+  }
+  .columna-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.05;
+    letter-spacing: 0.005em;
+    margin-bottom: 18px;
+  }
+  .columna-subtitulo {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-dim);
+    max-width: 580px;
+    margin: 0 auto 24px;
+    line-height: 1.5;
+  }
+  .columna-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+  }
+  .columna-meta span { color: var(--cempasuchil); margin-right: 4px; }
+
+  .columna-cuerpo p {
+    font-family: 'Lora', serif;
+    font-size: 17.5px;
+    line-height: 1.78;
+    color: var(--ink);
+    margin-bottom: 24px;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .columna-cuerpo p em {
+    color: var(--cempasuchil-claro);
+    font-style: italic;
+  }
+  .columna-cuerpo .con-capital::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 84px;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 14px 0 0;
+    color: var(--cempasuchil);
+    font-weight: 700;
+  }
+  .columna-cuerpo .destacado {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    line-height: 1.3;
+    color: var(--cempasuchil-claro);
+    font-style: italic;
+    text-align: center;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-weight: 500;
+    max-width: 560px;
+    text-align: center !important;
+    hyphens: none;
+  }
+  .columna-cuerpo .cita-eje {
+    margin: 44px auto;
+    padding: 30px 36px 30px 40px;
+    max-width: 620px;
+    border-left: 3px solid var(--cempasuchil);
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.06), transparent);
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .columna-cuerpo .cita-eje p {
+    font-style: italic;
+    font-size: 23px;
+    line-height: 1.42;
+    color: var(--cempasuchil-claro);
+    margin-bottom: 14px;
+    text-align: left;
+    hyphens: none;
+  }
+  .columna-cuerpo .cita-eje cite {
+    display: block;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .columna-cuerpo .firma {
+    text-align: right !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cempasuchil);
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--rule);
+    hyphens: none;
+  }
+
+  .columna-pie {
+    margin-top: 60px;
+    padding: 28px 32px;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--cempasuchil);
+  }
+  .columna-pie-titulo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 14px;
+  }
+  .columna-pie-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .columna-pie-lista li {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .columna-pie-lista li:last-child { border-bottom: none; }
+  .columna-pie-lista strong { color: var(--ink); }
+  .columna-pie-lista code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--cempasuchil-claro);
+    background: rgba(0,0,0,0.3);
+    padding: 1px 6px;
+  }
+  .columna-pie-lista em {
+    font-style: italic;
+    color: var(--cempasuchil);
+  }
+
+  /* ========================= CEMENTERIO ========================= */
+  .cementerio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 36px 28px;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 40px 0;
+    position: relative;
+  }
+  .cementerio::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 12% 30%, rgba(245, 166, 35, 0.08) 0%, transparent 8%),
+      radial-gradient(circle at 85% 60%, rgba(233, 30, 99, 0.06) 0%, transparent 8%),
+      radial-gradient(circle at 30% 85%, rgba(0, 188, 212, 0.05) 0%, transparent 8%),
+      radial-gradient(circle at 70% 15%, rgba(156, 39, 176, 0.05) 0%, transparent 8%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* LÁPIDA — forma de tumba real */
+  .lapida {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03) 0%, transparent 8%),
+      radial-gradient(circle at 70% 60%, rgba(0,0,0,0.12) 0%, transparent 10%),
+      radial-gradient(circle at 50% 80%, rgba(0,0,0,0.18) 0%, transparent 12%),
+      linear-gradient(180deg, #4c4c54 0%, #38383f 18%, #2a2a30 45%, #1a1a20 75%, #0e0e14 100%);
+    border-radius: 50% 50% 4px 4px / 30% 30% 4px 4px;
+    padding: 84px 22px 44px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    box-shadow:
+      inset 0 3px 6px rgba(255,255,255,0.06),
+      inset 0 -10px 24px rgba(0,0,0,0.55),
+      inset 5px 0 10px rgba(0,0,0,0.18),
+      inset -5px 0 10px rgba(0,0,0,0.18),
+      0 22px 44px rgba(0,0,0,0.75),
+      0 6px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.7);
+  }
+  .lapida:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      inset 0 3px 6px rgba(255,255,255,0.08),
+      inset 0 -10px 24px rgba(0,0,0,0.55),
+      0 28px 52px rgba(0,0,0,0.85),
+      0 0 24px rgba(245, 166, 35, 0.25),
+      0 0 0 1px var(--cempasuchil);
+  }
+  /* Cruz tallada arriba */
+  .lapida::before {
+    content: "†";
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: rgba(232, 227, 214, 0.38);
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.06),
+      0 -1px 0 rgba(0,0,0,0.85),
+      1px 0 0 rgba(0,0,0,0.4);
+    z-index: 3;
+  }
+  /* Grietas en la piedra */
+  .lapida::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 320' preserveAspectRatio='none'><g stroke='%23000' stroke-width='1' fill='none' opacity='0.6'><path d='M40 80 L48 110 L42 145 L52 175 L46 210'/><path d='M180 100 L172 135 L182 165 L175 195'/><path d='M110 200 L118 230 L108 260'/><path d='M70 30 L75 55'/><path d='M150 50 L145 75 L152 95'/></g></svg>");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.35;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  .lapida .epitafio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: rgba(184, 153, 104, 0.85);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+  }
+  .lapida .nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.18;
+    color: rgba(232, 227, 214, 0.95);
+    margin-bottom: 10px;
+    text-shadow:
+      0 1px 0 rgba(0,0,0,0.85),
+      0 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 4;
+  }
+  .lapida .fecha {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: rgba(154, 147, 132, 0.88);
+    margin-top: auto;
+    padding-top: 12px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.7);
+  }
+  .lapida .estado-mini {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin-top: 6px;
+    position: relative;
+    z-index: 4;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.7);
+  }
+
+  /* Musgo en la base */
+  .lapida .musgo {
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+    right: -2px;
+    height: 32px;
+    background:
+      radial-gradient(ellipse at 12% 100%, rgba(101, 156, 75, 0.55) 0%, transparent 35%),
+      radial-gradient(ellipse at 32% 100%, rgba(85, 130, 60, 0.45) 0%, transparent 32%),
+      radial-gradient(ellipse at 55% 100%, rgba(95, 145, 70, 0.5) 0%, transparent 35%),
+      radial-gradient(ellipse at 78% 100%, rgba(101, 156, 75, 0.55) 0%, transparent 35%),
+      radial-gradient(ellipse at 95% 100%, rgba(85, 130, 60, 0.4) 0%, transparent 30%);
+    pointer-events: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 3;
+  }
+
+  /* Veladoras flanqueando la tumba */
+  .lapida .veladoras {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 56px;
+    z-index: 5;
+  }
+  .veladora {
+    width: 12px;
+    height: 28px;
+    position: relative;
+  }
+  .veladora .cera {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(180deg, #d4a449 0%, #a07a14 60%, #5a4408 100%);
+    border-radius: 1px;
+    box-shadow:
+      inset -1px 0 0 rgba(0,0,0,0.35),
+      inset 1px 0 0 rgba(255,255,255,0.1),
+      0 2px 4px rgba(0,0,0,0.6);
+  }
+  .veladora .pabilo {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 4px;
+    background: #1a1a1e;
+  }
+  .veladora .flama {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 14px;
+    background: radial-gradient(ellipse at 50% 70%, #ffeb3b 0%, #ff9800 45%, #ff5722 75%, transparent 100%);
+    border-radius: 50% 50% 30% 30%;
+    filter: blur(0.4px);
+    animation: parpadeo 0.55s ease-in-out infinite alternate;
+    box-shadow:
+      0 0 10px rgba(255, 152, 0, 0.7),
+      0 0 20px rgba(255, 152, 0, 0.35);
+  }
+  @keyframes parpadeo {
+    0% { opacity: 0.78; transform: translateX(-50%) scale(0.88, 0.92); }
+    35% { opacity: 1; transform: translateX(-50%) scale(1.05, 1.08); }
+    65% { opacity: 0.92; transform: translateX(-50%) scale(0.96, 1); }
+    100% { opacity: 0.85; transform: translateX(-50%) scale(0.93, 0.98); }
+  }
+
+  /* Tierra al pie */
+  .lapida .tierra {
+    position: absolute;
+    bottom: -18px;
+    left: -20px;
+    right: -20px;
+    height: 28px;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(70, 45, 22, 0.6) 0%, rgba(45, 28, 14, 0.85) 45%, transparent 100%);
+    border-radius: 0 0 60% 60% / 0 0 100% 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Cempasúchil al pie de la tumba */
+  .lapida .cempasuchil-pie {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96px;
+    height: 28px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 28' width='96' height='28'><g><circle cx='14' cy='18' r='7' fill='%23ff8c00'/><circle cx='14' cy='18' r='5' fill='%23f5a623'/><circle cx='14' cy='18' r='3' fill='%23ffc857'/><circle cx='14' cy='18' r='1.5' fill='%23a05a0a'/><circle cx='32' cy='16' r='5' fill='%23ff8c00'/><circle cx='32' cy='16' r='3' fill='%23ffc857'/><circle cx='32' cy='16' r='1.2' fill='%23a05a0a'/><circle cx='48' cy='20' r='8' fill='%23ff8c00'/><circle cx='48' cy='20' r='6' fill='%23f5a623'/><circle cx='48' cy='20' r='4' fill='%23ffc857'/><circle cx='48' cy='20' r='1.8' fill='%23a05a0a'/><circle cx='64' cy='16' r='5' fill='%23ff8c00'/><circle cx='64' cy='16' r='3' fill='%23ffc857'/><circle cx='64' cy='16' r='1.2' fill='%23a05a0a'/><circle cx='82' cy='18' r='7' fill='%23ff8c00'/><circle cx='82' cy='18' r='5' fill='%23f5a623'/><circle cx='82' cy='18' r='3' fill='%23ffc857'/><circle cx='82' cy='18' r='1.5' fill='%23a05a0a'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 4;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.5));
+  }
+
+  /* Calavera de azúcar pequeña como ofrenda */
+  .lapida .calaverita {
+    position: absolute;
+    bottom: 22px;
+    width: 22px;
+    height: 26px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 26' width='22' height='26'><g><path d='M11 2 Q3 2 3 12 Q3 18 7 21 L7 23 L9 23 L9 21 L13 21 L13 23 L15 23 L15 21 Q19 18 19 12 Q19 2 11 2 Z' fill='%23f5e6d3'/><ellipse cx='8' cy='10' rx='1.8' ry='2.5' fill='%230c0c0e'/><ellipse cx='14' cy='10' rx='1.8' ry='2.5' fill='%230c0c0e'/><circle cx='8' cy='10' r='1' fill='%23e91e63'/><circle cx='14' cy='10' r='1' fill='%239c27b0'/><path d='M11 13 L10 16 L11 17 L12 16 Z' fill='%230c0c0e'/><circle cx='11' cy='6' r='1.2' fill='%23e91e63'/><circle cx='7' cy='7' r='0.8' fill='%2300bcd4'/><circle cx='15' cy='7' r='0.8' fill='%23ffc857'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 4;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.6));
+  }
+  .lapida .calaverita--izq { left: 14px; transform: rotate(-8deg); }
+  .lapida .calaverita--der { right: 14px; transform: rotate(8deg); }
+
+  /* Corona de cempasúchil sobre la lápida */
+  .lapida .corona-flores {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 175px;
+    height: 50px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 175 50' width='175' height='50'><g><ellipse cx='30' cy='40' rx='8' ry='3' fill='%2366bb6a' opacity='0.65'/><ellipse cx='90' cy='42' rx='10' ry='3.5' fill='%2366bb6a' opacity='0.7'/><ellipse cx='145' cy='40' rx='8' ry='3' fill='%2366bb6a' opacity='0.65'/><g transform='translate(8, 8)'><circle cx='14' cy='4' r='5' fill='%23ff8c00'/><circle cx='22' cy='9' r='4' fill='%23ff8c00'/><circle cx='22' cy='18' r='4' fill='%23ff8c00'/><circle cx='14' cy='23' r='5' fill='%23ff8c00'/><circle cx='6' cy='18' r='4' fill='%23ff8c00'/><circle cx='6' cy='9' r='4' fill='%23ff8c00'/><circle cx='14' cy='13' r='5' fill='%23ffc857'/><circle cx='14' cy='13' r='2.5' fill='%23a05a0a'/></g><g transform='translate(42, 4)'><circle cx='14' cy='4' r='5.5' fill='%23ff8c00'/><circle cx='23' cy='10' r='4.5' fill='%23ff8c00'/><circle cx='23' cy='22' r='4.5' fill='%23ff8c00'/><circle cx='14' cy='28' r='5.5' fill='%23ff8c00'/><circle cx='5' cy='22' r='4.5' fill='%23ff8c00'/><circle cx='5' cy='10' r='4.5' fill='%23ff8c00'/><circle cx='14' cy='16' r='5.5' fill='%23f5a623'/><circle cx='14' cy='16' r='3' fill='%23ffc857'/><circle cx='14' cy='16' r='1.5' fill='%23a05a0a'/></g><g transform='translate(78, 0)'><circle cx='15' cy='5' r='6' fill='%23ff8c00'/><circle cx='25' cy='11' r='5' fill='%23ff8c00'/><circle cx='25' cy='25' r='5' fill='%23ff8c00'/><circle cx='15' cy='31' r='6' fill='%23ff8c00'/><circle cx='5' cy='25' r='5' fill='%23ff8c00'/><circle cx='5' cy='11' r='5' fill='%23ff8c00'/><circle cx='15' cy='18' r='6' fill='%23f5a623'/><circle cx='15' cy='18' r='3.5' fill='%23ffc857'/><circle cx='15' cy='18' r='1.8' fill='%23a05a0a'/></g><g transform='translate(115, 4)'><circle cx='14' cy='4' r='5.5' fill='%23ff8c00'/><circle cx='23' cy='10' r='4.5' fill='%23ff8c00'/><circle cx='23' cy='22' r='4.5' fill='%23ff8c00'/><circle cx='14' cy='28' r='5.5' fill='%23ff8c00'/><circle cx='5' cy='22' r='4.5' fill='%23ff8c00'/><circle cx='5' cy='10' r='4.5' fill='%23ff8c00'/><circle cx='14' cy='16' r='5.5' fill='%23f5a623'/><circle cx='14' cy='16' r='3' fill='%23ffc857'/><circle cx='14' cy='16' r='1.5' fill='%23a05a0a'/></g><g transform='translate(149, 8)'><circle cx='14' cy='4' r='5' fill='%23ff8c00'/><circle cx='22' cy='9' r='4' fill='%23ff8c00'/><circle cx='22' cy='18' r='4' fill='%23ff8c00'/><circle cx='14' cy='23' r='5' fill='%23ff8c00'/><circle cx='6' cy='18' r='4' fill='%23ff8c00'/><circle cx='6' cy='9' r='4' fill='%23ff8c00'/><circle cx='14' cy='13' r='5' fill='%23ffc857'/><circle cx='14' cy='13' r='2.5' fill='%23a05a0a'/></g></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: none;
+    z-index: 5;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
+  }
+
+  /* Flor individual reutilizable */
+  .lapida .flor {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40'><g><circle cx='20' cy='6' r='6' fill='%23ff8c00'/><circle cx='32' cy='12' r='5.5' fill='%23ff8c00'/><circle cx='35' cy='22' r='5' fill='%23ff8c00'/><circle cx='32' cy='30' r='5.5' fill='%23ff8c00'/><circle cx='20' cy='34' r='6' fill='%23ff8c00'/><circle cx='8' cy='30' r='5.5' fill='%23ff8c00'/><circle cx='5' cy='22' r='5' fill='%23ff8c00'/><circle cx='8' cy='12' r='5.5' fill='%23ff8c00'/><circle cx='20' cy='14' r='5' fill='%23f5a623'/><circle cx='27' cy='18' r='4.5' fill='%23f5a623'/><circle cx='27' cy='26' r='4.5' fill='%23f5a623'/><circle cx='20' cy='30' r='5' fill='%23f5a623'/><circle cx='13' cy='26' r='4.5' fill='%23f5a623'/><circle cx='13' cy='18' r='4.5' fill='%23f5a623'/><circle cx='20' cy='22' r='6' fill='%23ffc857'/><circle cx='20' cy='22' r='3' fill='%23a05a0a'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 4;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.55));
+  }
+  .lapida .flor--top-izq { top: 100px; left: 0; transform: rotate(-25deg); }
+  .lapida .flor--top-der { top: 100px; right: 0; transform: rotate(25deg); }
+  .lapida .flor--med-izq { top: 178px; left: -4px; transform: rotate(-32deg); width: 22px; height: 22px; }
+  .lapida .flor--med-der { top: 178px; right: -4px; transform: rotate(32deg); width: 22px; height: 22px; }
+
+  /* Pétalos caídos sobre la piedra */
+  .lapida .petalo-fijo {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ff8c00 30%, #f5a623 70%, transparent 100%);
+    border-radius: 50% 30% 50% 30%;
+    pointer-events: none;
+    z-index: 3;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5));
+  }
+  .lapida .petalo-fijo--uno { top: 150px; left: 36px; transform: rotate(45deg); }
+  .lapida .petalo-fijo--dos { top: 220px; right: 40px; transform: rotate(-30deg); width: 6px; height: 6px; }
+  .lapida .petalo-fijo--tres { top: 195px; left: 48%; transform: rotate(15deg); }
+
+  /* Variantes por causa — cambia el símbolo grabado */
+  .lapida--extinto::before { content: "✝"; color: rgba(184, 153, 104, 0.55); }
+  .lapida--inexistente::before { content: "⊘"; color: rgba(154, 147, 132, 0.55); }
+  .lapida--cascaron::before { content: "○"; color: rgba(212, 160, 23, 0.55); }
+  .lapida--bloqueado::before { content: "▮"; color: rgba(139, 58, 26, 0.65); }
+  .lapida--caido::before { content: "✗"; color: rgba(160, 24, 24, 0.6); }
+  .lapida--inseguro::before { content: "⚠"; color: rgba(212, 160, 23, 0.65); }
+
+  /* Variantes de FORMA — para que el cementerio no se vea uniforme */
+  /* Rectangular (estilo placa moderna) */
+  .lapida--rectangular {
+    border-radius: 6px 6px 4px 4px;
+    padding-top: 62px;
+  }
+  .lapida--rectangular::before {
+    top: 18px;
+    font-size: 34px;
+  }
+  /* Gótica (arco más pronunciado, más alta) */
+  .lapida--gotica {
+    border-radius: 50% 50% 4px 4px / 58% 58% 4px 4px;
+    padding-top: 100px;
+    min-height: 340px;
+  }
+  .lapida--gotica::before {
+    top: 42px;
+    font-size: 44px;
+  }
+  /* Trapezoidal (más ancha abajo, base de monumento) */
+  .lapida--trapezoidal {
+    border-radius: 30% 30% 4px 4px / 18% 18% 4px 4px;
+    padding-top: 70px;
+  }
+  .lapida--trapezoidal::before {
+    top: 24px;
+    font-size: 36px;
+  }
+  /* Inclinada — para sensación de tumba vieja */
+  .lapida--inclinada {
+    transform: rotate(-1.8deg);
+  }
+  .lapida--inclinada:hover {
+    transform: rotate(-1.8deg) translateY(-8px);
+  }
+  .lapida--inclinada-der {
+    transform: rotate(1.6deg);
+  }
+  .lapida--inclinada-der:hover {
+    transform: rotate(1.6deg) translateY(-8px);
+  }
+
+  /* ========================= ESCENA DEL CEMENTERIO ========================= */
+  .cementerio-escena {
+    position: relative;
+    margin: 0 -28px;
+    padding: 70px 28px 130px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 85% 12%, rgba(245, 230, 211, 0.10) 0%, transparent 28%),
+      radial-gradient(circle at 50% 100%, rgba(60, 40, 20, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(245, 166, 35, 0.025) 0%, transparent 60%),
+      linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.7) 100%);
+  }
+  /* Wallpaper de cempasúchil al fondo, muy transparente */
+  .cementerio-escena::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' width='240' height='240'><g><g transform='translate(34, 28)'><circle cx='18' cy='6' r='7' fill='%23ff8c00'/><circle cx='30' cy='14' r='6' fill='%23ff8c00'/><circle cx='30' cy='26' r='6' fill='%23ff8c00'/><circle cx='18' cy='34' r='7' fill='%23ff8c00'/><circle cx='6' cy='26' r='6' fill='%23ff8c00'/><circle cx='6' cy='14' r='6' fill='%23ff8c00'/><circle cx='18' cy='18' r='8' fill='%23f5a623'/><circle cx='18' cy='18' r='4' fill='%23ffc857'/><circle cx='18' cy='18' r='2' fill='%23a05a0a'/></g><ellipse cx='90' cy='40' rx='14' ry='4' fill='%2366bb6a' transform='rotate(25 90 40)'/><g transform='translate(140, 78)'><circle cx='22' cy='8' r='8' fill='%23ff8c00'/><circle cx='36' cy='18' r='7' fill='%23ff8c00'/><circle cx='36' cy='32' r='7' fill='%23ff8c00'/><circle cx='22' cy='42' r='8' fill='%23ff8c00'/><circle cx='8' cy='32' r='7' fill='%23ff8c00'/><circle cx='8' cy='18' r='7' fill='%23ff8c00'/><circle cx='22' cy='24' r='9' fill='%23f5a623'/><circle cx='22' cy='24' r='5' fill='%23ffc857'/><circle cx='22' cy='24' r='2.5' fill='%23a05a0a'/></g><ellipse cx='200' cy='44' rx='12' ry='3.5' fill='%2366bb6a' transform='rotate(-18 200 44)'/><g transform='translate(48, 160)'><circle cx='16' cy='6' r='6' fill='%23ff8c00'/><circle cx='26' cy='12' r='5' fill='%23ff8c00'/><circle cx='26' cy='22' r='5' fill='%23ff8c00'/><circle cx='16' cy='28' r='6' fill='%23ff8c00'/><circle cx='6' cy='22' r='5' fill='%23ff8c00'/><circle cx='6' cy='12' r='5' fill='%23ff8c00'/><circle cx='16' cy='17' r='6' fill='%23f5a623'/><circle cx='16' cy='17' r='3' fill='%23ffc857'/><circle cx='16' cy='17' r='1.5' fill='%23a05a0a'/></g><ellipse cx='115' cy='190' rx='14' ry='4' fill='%2366bb6a' transform='rotate(40 115 190)'/><g transform='translate(170, 178)'><circle cx='18' cy='6' r='7' fill='%23ff8c00'/><circle cx='30' cy='14' r='6' fill='%23ff8c00'/><circle cx='30' cy='26' r='6' fill='%23ff8c00'/><circle cx='18' cy='34' r='7' fill='%23ff8c00'/><circle cx='6' cy='26' r='6' fill='%23ff8c00'/><circle cx='6' cy='14' r='6' fill='%23ff8c00'/><circle cx='18' cy='18' r='8' fill='%23f5a623'/><circle cx='18' cy='18' r='4' fill='%23ffc857'/><circle cx='18' cy='18' r='2' fill='%23a05a0a'/></g><circle cx='10' cy='100' r='3' fill='%23ff8c00'/><circle cx='225' cy='130' r='3' fill='%23ff8c00'/><circle cx='100' cy='110' r='2.5' fill='%23f5a623'/><circle cx='75' cy='220' r='2.5' fill='%23f5a623'/></g></svg>");
+    background-repeat: repeat;
+    background-size: 240px 240px;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: screen;
+  }
+
+  /* Estrellas */
+  .cementerio-escena .estrellas {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 8% 15%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 22% 8%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 38% 22%, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 55% 11%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 72% 18%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 92% 28%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 15% 35%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 65% 40%, rgba(255,255,255,0.5), transparent);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    animation: titilar-estrellas 6s ease-in-out infinite;
+  }
+  @keyframes titilar-estrellas {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.75; }
+  }
+
+  /* Luna llena */
+  .cementerio-escena .luna {
+    position: absolute;
+    top: 50px;
+    right: 7%;
+    width: 100px;
+    height: 100px;
+    background:
+      radial-gradient(circle at 40% 35%, #faf0d8 0%, #e8d8ba 40%, #c9b88e 75%, rgba(201, 184, 142, 0.2) 100%);
+    border-radius: 50%;
+    box-shadow:
+      0 0 40px rgba(250, 240, 216, 0.3),
+      0 0 90px rgba(250, 240, 216, 0.18),
+      0 0 160px rgba(250, 240, 216, 0.08),
+      inset -12px -12px 0 rgba(80, 70, 50, 0.08),
+      inset 4px 4px 12px rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .cementerio-escena .luna::before {
+    content: "";
+    position: absolute;
+    top: 22%;
+    left: 28%;
+    width: 14px;
+    height: 14px;
+    background: rgba(100, 90, 70, 0.12);
+    border-radius: 50%;
+    box-shadow:
+      18px 28px 0 -3px rgba(100, 90, 70, 0.10),
+      -8px 32px 0 -2px rgba(100, 90, 70, 0.08);
+  }
+
+  /* Árboles invernales y tumbas de fondo */
+  .cementerio-escena .horizonte {
+    position: absolute;
+    bottom: 70px;
+    left: -30px;
+    right: -30px;
+    height: 200px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 200' preserveAspectRatio='xMidYMax meet' width='1400' height='200'><g stroke='%23000' fill='%23000'><g opacity='0.35'><rect x='90' y='168' width='4' height='32'/><rect x='86' y='176' width='12' height='2'/><path d='M230 200 L230 168 Q230 162 240 162 Q250 162 250 168 L250 200 Z'/><rect x='390' y='172' width='3' height='28'/><rect x='386' y='180' width='11' height='2'/><path d='M520 200 L520 166 Q520 158 532 158 Q544 158 544 166 L544 200 Z'/><rect x='700' y='174' width='4' height='26'/><path d='M810 200 L810 164 Q810 157 822 157 Q834 157 834 164 L834 200 Z'/><rect x='980' y='172' width='3' height='28'/><rect x='974' y='180' width='13' height='2'/><rect x='1170' y='170' width='4' height='30'/><path d='M1300 200 L1300 165 Q1300 158 1312 158 Q1324 158 1324 165 L1324 200 Z'/></g><g transform='translate(60,0)' fill='none'><path d='M0 200 L0 65' stroke-width='5'/><path d='M0 85 Q -12 70 -32 58' stroke-width='3'/><path d='M0 78 Q 14 62 30 48' stroke-width='3'/><path d='M0 72 Q -10 53 -22 36' stroke-width='2.5'/><path d='M0 66 Q 8 47 16 28' stroke-width='2.5'/><path d='M0 108 L -28 106' stroke-width='3'/><path d='M0 116 L 30 108' stroke-width='3'/><path d='M-32 58 L-46 46' stroke-width='1.5'/><path d='M-32 58 L-40 72' stroke-width='1.5'/><path d='M30 48 L46 36' stroke-width='1.5'/><path d='M30 48 L38 64' stroke-width='1.5'/><path d='M-22 36 L-30 24' stroke-width='1'/><path d='M16 28 L24 16' stroke-width='1'/><path d='M16 28 L8 14' stroke-width='1'/><path d='M-46 46 L-54 38' stroke-width='0.8'/><path d='M46 36 L54 28' stroke-width='0.8'/></g><g transform='translate(280,0)' fill='none'><path d='M0 200 L0 45' stroke-width='6'/><path d='M0 70 Q -16 58 -36 42' stroke-width='3.5'/><path d='M0 62 Q 18 50 38 34' stroke-width='3.5'/><path d='M0 55 Q -10 38 -20 20' stroke-width='3'/><path d='M0 48 Q 8 32 14 12' stroke-width='3'/><path d='M0 90 L -30 85' stroke-width='3'/><path d='M0 100 L 32 92' stroke-width='3'/><path d='M-36 42 L-52 28' stroke-width='1.5'/><path d='M-36 42 L-44 58' stroke-width='1.5'/><path d='M38 34 L54 20' stroke-width='1.5'/><path d='M38 34 L48 48' stroke-width='1.5'/><path d='M-20 20 L-28 8' stroke-width='1'/><path d='M14 12 L22 0' stroke-width='1'/><path d='M-52 28 L-60 20' stroke-width='0.8'/><path d='M54 20 L62 12' stroke-width='0.8'/></g><g opacity='0.55'><rect x='340' y='168' width='4' height='32'/><rect x='334' y='176' width='16' height='3'/></g><g transform='translate(490,0)' fill='none'><path d='M0 200 L0 60' stroke-width='5'/><path d='M0 80 Q -15 65 -32 50' stroke-width='3'/><path d='M0 72 Q 16 56 32 42' stroke-width='3'/><path d='M0 65 Q -8 48 -16 30' stroke-width='2.5'/><path d='M0 58 Q 10 42 18 24' stroke-width='2.5'/><path d='M-32 50 L-44 40' stroke-width='1.5'/><path d='M-32 50 L-40 62' stroke-width='1.5'/><path d='M32 42 L46 32' stroke-width='1.5'/><path d='M32 42 L40 56' stroke-width='1.5'/><path d='M-16 30 L-22 18' stroke-width='1'/><path d='M18 24 L26 12' stroke-width='1'/></g><g transform='translate(700,0)' fill='none'><path d='M0 200 L8 75' stroke-width='4'/><path d='M5 95 Q -10 82 -24 70' stroke-width='2.5'/><path d='M7 85 Q 22 68 36 52' stroke-width='2.5'/><path d='M8 75 Q 0 56 -10 38' stroke-width='2.5'/><path d='M9 68 Q 16 50 22 32' stroke-width='2.5'/><path d='M-24 70 L-36 60' stroke-width='1'/><path d='M36 52 L48 42' stroke-width='1'/><path d='M-10 38 L-16 28' stroke-width='1'/><path d='M22 32 L28 20' stroke-width='1'/></g><g transform='translate(910,30)' opacity='0.7' fill='none'><path d='M0 170 L0 35' stroke-width='4'/><path d='M0 60 Q -12 45 -25 32' stroke-width='2.5'/><path d='M0 52 Q 14 38 28 24' stroke-width='2.5'/><path d='M0 42 Q -8 25 -16 10' stroke-width='2'/><path d='M0 35 Q 8 18 14 4' stroke-width='2'/><path d='M-25 32 L-35 22' stroke-width='1'/><path d='M28 24 L40 14' stroke-width='1'/></g><g opacity='0.5'><rect x='1000' y='170' width='4' height='30'/><rect x='994' y='178' width='16' height='3'/><path d='M1080 200 L1080 168 Q1080 162 1090 162 Q1100 162 1100 168 L1100 200 Z'/></g><g transform='translate(1150,0)' fill='none'><path d='M0 200 L0 50' stroke-width='6'/><path d='M0 75 Q -16 62 -36 48' stroke-width='3.5'/><path d='M0 68 Q 18 54 38 38' stroke-width='3.5'/><path d='M0 58 Q -10 42 -22 24' stroke-width='3'/><path d='M0 52 Q 8 36 16 16' stroke-width='3'/><path d='M0 95 L -32 92' stroke-width='3'/><path d='M0 104 L 34 96' stroke-width='3'/><path d='M-36 48 L-50 38' stroke-width='1.5'/><path d='M-36 48 L-44 62' stroke-width='1.5'/><path d='M38 38 L52 28' stroke-width='1.5'/><path d='M38 38 L46 52' stroke-width='1.5'/><path d='M-22 24 L-30 12' stroke-width='1'/><path d='M16 16 L24 4' stroke-width='1'/><path d='M-50 38 L-58 30' stroke-width='0.8'/><path d='M52 28 L60 20' stroke-width='0.8'/></g></g></svg>");
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: 1400px 200px;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Niebla baja — más densa y atmosférica */
+  .cementerio-escena .niebla {
+    position: absolute;
+    bottom: -30px;
+    left: -20%;
+    right: -20%;
+    height: 280px;
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        rgba(184, 153, 104, 0.08) 18%,
+        rgba(184, 153, 104, 0.22) 45%,
+        rgba(184, 153, 104, 0.38) 75%,
+        rgba(184, 153, 104, 0.5) 100%);
+    pointer-events: none;
+    z-index: 4;
+    animation: niebla-flota 32s ease-in-out infinite;
+    filter: blur(3px);
+  }
+  @keyframes niebla-flota {
+    0%, 100% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(50px); opacity: 0.65; }
+  }
+  /* Segunda capa de niebla — más alta y traslúcida */
+  .cementerio-escena .niebla-alta {
+    position: absolute;
+    bottom: 60px;
+    left: -25%;
+    right: -25%;
+    height: 160px;
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        rgba(212, 197, 168, 0.06) 30%,
+        rgba(212, 197, 168, 0.14) 65%,
+        transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+    animation: niebla-alta-flota 45s ease-in-out infinite;
+    filter: blur(4px);
+  }
+  @keyframes niebla-alta-flota {
+    0%, 100% { transform: translateX(-30px); opacity: 0.8; }
+    50% { transform: translateX(40px); opacity: 0.4; }
+  }
+
+  /* Mariposas monarca — las almas que regresan */
+  .cementerio-escena .mariposa {
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 6;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 50' width='60' height='50'><g><ellipse cx='30' cy='25' rx='1.8' ry='14' fill='%23000'/><path d='M28 18 Q14 8 6 18 Q4 26 14 26 Q21 23 28 22 Z' fill='%23ff8c00' stroke='%23000' stroke-width='1.5'/><path d='M28 26 Q14 31 11 40 Q14 44 22 38 Q26 32 28 28 Z' fill='%23ff8c00' stroke='%23000' stroke-width='1.5'/><path d='M32 18 Q46 8 54 18 Q56 26 46 26 Q39 23 32 22 Z' fill='%23ff8c00' stroke='%23000' stroke-width='1.5'/><path d='M32 26 Q46 31 49 40 Q46 44 38 38 Q34 32 32 28 Z' fill='%23ff8c00' stroke='%23000' stroke-width='1.5'/><circle cx='13' cy='17' r='1.4' fill='%23fff'/><circle cx='47' cy='17' r='1.4' fill='%23fff'/><circle cx='19' cy='36' r='1.2' fill='%23fff'/><circle cx='41' cy='36' r='1.2' fill='%23fff'/><circle cx='9' cy='22' r='1' fill='%23fff'/><circle cx='51' cy='22' r='1' fill='%23fff'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+  }
+  .cementerio-escena .mariposa--uno {
+    top: 18%; left: 6%;
+    animation: vuela-uno 26s ease-in-out infinite;
+  }
+  .cementerio-escena .mariposa--dos {
+    top: 30%; right: 10%;
+    animation: vuela-dos 32s ease-in-out infinite;
+  }
+  .cementerio-escena .mariposa--tres {
+    top: 65%; left: 35%;
+    animation: vuela-tres 28s ease-in-out infinite;
+  }
+  @keyframes vuela-uno {
+    0%, 100% { transform: translate(0, 0) rotate(0); }
+    25% { transform: translate(130px, -70px) rotate(18deg); }
+    50% { transform: translate(280px, 20px) rotate(-12deg); }
+    75% { transform: translate(150px, 90px) rotate(8deg); }
+  }
+  @keyframes vuela-dos {
+    0%, 100% { transform: translate(0, 0) rotate(0); }
+    30% { transform: translate(-120px, 50px) rotate(-15deg); }
+    60% { transform: translate(-260px, -40px) rotate(15deg); }
+    85% { transform: translate(-80px, -110px) rotate(-8deg); }
+  }
+  @keyframes vuela-tres {
+    0%, 100% { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(90px, -60px) rotate(14deg); }
+    50% { transform: translate(200px, 40px) rotate(-14deg); }
+    80% { transform: translate(50px, 100px) rotate(10deg); }
+  }
+
+  /* Pétalos de cempasúchil cayendo */
+  .cementerio-escena .petalo {
+    position: absolute;
+    top: -30px;
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle at 50% 50%, #ff8c00 20%, #f5a623 60%, transparent 100%);
+    border-radius: 50% 30% 50% 30%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    animation: caer-petalo 20s linear infinite;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+  }
+  .cementerio-escena .petalo:nth-child(1) { left: 8%; animation-delay: 0s; }
+  .cementerio-escena .petalo:nth-child(2) { left: 22%; animation-delay: 5s; width: 12px; height: 12px; }
+  .cementerio-escena .petalo:nth-child(3) { left: 38%; animation-delay: 11s; }
+  .cementerio-escena .petalo:nth-child(4) { left: 56%; animation-delay: 3s; width: 14px; height: 14px; }
+  .cementerio-escena .petalo:nth-child(5) { left: 72%; animation-delay: 16s; }
+  .cementerio-escena .petalo:nth-child(6) { left: 88%; animation-delay: 8s; width: 13px; height: 13px; }
+  .cementerio-escena .petalo:nth-child(7) { left: 45%; animation-delay: 19s; }
+  .cementerio-escena .petalo:nth-child(8) { left: 64%; animation-delay: 13s; width: 11px; height: 11px; }
+  @keyframes caer-petalo {
+    0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
+    5% { opacity: 0.85; }
+    50% { transform: translateY(450px) rotate(180deg) translateX(28px); }
+    95% { opacity: 0.55; }
+    100% { transform: translateY(1000px) rotate(360deg) translateX(-18px); opacity: 0; }
+  }
+
+  /* Catrina silueta */
+  .cementerio-escena .catrina {
+    position: absolute;
+    bottom: 70px;
+    right: -10px;
+    width: 110px;
+    height: 280px;
+    pointer-events: none;
+    z-index: 2;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 280' width='110' height='280'><g fill='%23000' opacity='0.55'><ellipse cx='55' cy='38' rx='22' ry='28'/><path d='M28 25 Q20 5 35 0 Q45 5 38 22 Z'/><path d='M82 25 Q90 5 75 0 Q65 5 72 22 Z'/><ellipse cx='55' cy='15' rx='30' ry='8'/><circle cx='38' cy='10' r='5'/><circle cx='72' cy='10' r='5'/><circle cx='55' cy='6' r='4'/><rect x='48' y='62' width='14' height='18'/><path d='M30 80 L80 80 L88 270 L70 280 L62 200 L48 200 L40 280 L22 270 Z'/><path d='M25 95 L15 130 L18 175 L25 200 L30 175 L30 95 Z'/><path d='M85 95 L95 130 L92 175 L85 200 L80 175 L80 95 Z'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* Sahumerio con humo de copal */
+  .cementerio-escena .sahumerio {
+    position: absolute;
+    bottom: 92px;
+    left: 4%;
+    width: 30px;
+    height: 60px;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .cementerio-escena .sahumerio .recipiente {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 18px;
+    background: linear-gradient(180deg, #8b6914 0%, #5a4408 100%);
+    border-radius: 50% 50% 4px 4px;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.5);
+  }
+  .cementerio-escena .sahumerio .humo {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(245, 230, 211, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: humo-sube 4s ease-out infinite;
+  }
+  .cementerio-escena .sahumerio .humo:nth-child(2) { animation-delay: 1.3s; }
+  .cementerio-escena .sahumerio .humo:nth-child(3) { animation-delay: 2.6s; }
+  @keyframes humo-sube {
+    0% { transform: translate(-50%, 0) scale(0.6); opacity: 0; }
+    20% { opacity: 0.7; }
+    100% { transform: translate(-50%, -60px) scale(2.5); opacity: 0; }
+  }
+
+  /* Cementerio grid - reposicionado encima de la escena */
+  .cementerio-escena .cementerio {
+    position: relative;
+    z-index: 3;
+    padding: 30px 0 60px;
+    margin-bottom: 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cementerio-escena .cementerio::before { display: none; }
+
+  /* ========================= CRONOLOGÍA — OFRENDA ========================= */
+  .cronologia {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 60px 0 60px 60px;
+  }
+  .cronologia::before {
+    /* Camino de pétalos: línea central decorada */
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        var(--cempasuchil) 8%,
+        var(--cempasuchil) 92%,
+        transparent 100%);
+    box-shadow: 0 0 12px rgba(245, 166, 35, 0.4);
+    border-radius: 2px;
+  }
+  .cronologia::after {
+    /* Pétalos esparcidos a lo largo del camino */
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 20px;
+    bottom: 20px;
+    width: 36px;
+    background-image:
+      radial-gradient(circle at 50% 5%, #ff8c00 2px, transparent 3px),
+      radial-gradient(circle at 30% 15%, #f5a623 1.5px, transparent 2.5px),
+      radial-gradient(circle at 70% 25%, #ffc857 1.5px, transparent 2.5px),
+      radial-gradient(circle at 40% 38%, #ff8c00 1.8px, transparent 2.8px),
+      radial-gradient(circle at 60% 50%, #f5a623 1.5px, transparent 2.5px),
+      radial-gradient(circle at 35% 62%, #ffc857 1.5px, transparent 2.5px),
+      radial-gradient(circle at 65% 75%, #ff8c00 1.8px, transparent 2.8px),
+      radial-gradient(circle at 45% 88%, #f5a623 1.5px, transparent 2.5px);
+    pointer-events: none;
+    opacity: 0.75;
+  }
+  .cronologia .evento {
+    position: relative;
+    padding: 22px 0 22px 50px;
+    margin-bottom: 8px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .cronologia .evento:last-child { border-bottom: none; }
+  .cronologia .evento::before {
+    /* Marcador: calaverita de azúcar */
+    content: "";
+    position: absolute;
+    left: -46px;
+    top: 22px;
+    width: 32px;
+    height: 38px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 38' width='32' height='38'><g><path d='M16 3 Q4 3 4 17 Q4 25 10 30 L10 33 L13 33 L13 30 L19 30 L19 33 L22 33 L22 30 Q28 25 28 17 Q28 3 16 3 Z' fill='%23f5e6d3' stroke='%23000' stroke-width='0.5'/><ellipse cx='11' cy='14' rx='2.5' ry='3.5' fill='%230c0c0e'/><ellipse cx='21' cy='14' rx='2.5' ry='3.5' fill='%230c0c0e'/><circle cx='11' cy='14' r='1.3' fill='%23e91e63'/><circle cx='21' cy='14' r='1.3' fill='%239c27b0'/><path d='M16 18 L14 22 L16 23 L18 22 Z' fill='%230c0c0e'/><circle cx='16' cy='8' r='1.5' fill='%23e91e63'/><circle cx='10' cy='9' r='1' fill='%2300bcd4'/><circle cx='22' cy='9' r='1' fill='%23ffc857'/><line x1='13' y1='26' x2='13' y2='29' stroke='%230c0c0e' stroke-width='0.6'/><line x1='16' y1='26' x2='16' y2='29' stroke='%230c0c0e' stroke-width='0.6'/><line x1='19' y1='26' x2='19' y2='29' stroke='%230c0c0e' stroke-width='0.6'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+    z-index: 2;
+  }
+  .cronologia .evento.muerte::before {
+    /* Calavera grande con cempasúchil para defunciones */
+    width: 40px;
+    height: 46px;
+    left: -52px;
+    top: 18px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 46' width='40' height='46'><g><circle cx='6' cy='10' r='4' fill='%23ff8c00'/><circle cx='6' cy='10' r='2' fill='%23ffc857'/><circle cx='6' cy='10' r='1' fill='%23a05a0a'/><circle cx='34' cy='10' r='4' fill='%23ff8c00'/><circle cx='34' cy='10' r='2' fill='%23ffc857'/><circle cx='34' cy='10' r='1' fill='%23a05a0a'/><path d='M20 4 Q5 4 5 20 Q5 30 12 36 L12 40 L16 40 L16 36 L24 36 L24 40 L28 40 L28 36 Q35 30 35 20 Q35 4 20 4 Z' fill='%23f5e6d3' stroke='%23000' stroke-width='0.6'/><ellipse cx='14' cy='17' rx='3' ry='4' fill='%230c0c0e'/><ellipse cx='26' cy='17' rx='3' ry='4' fill='%230c0c0e'/><circle cx='14' cy='17' r='1.5' fill='%23e91e63'/><circle cx='26' cy='17' r='1.5' fill='%239c27b0'/><path d='M20 22 L17 28 L20 29 L23 28 Z' fill='%230c0c0e'/><circle cx='20' cy='10' r='2' fill='%23e91e63'/><circle cx='13' cy='11' r='1.2' fill='%2300bcd4'/><circle cx='27' cy='11' r='1.2' fill='%23ffc857'/><line x1='16' y1='32' x2='16' y2='35' stroke='%230c0c0e' stroke-width='0.7'/><line x1='20' y1='32' x2='20' y2='35' stroke='%230c0c0e' stroke-width='0.7'/><line x1='24' y1='32' x2='24' y2='35' stroke='%230c0c0e' stroke-width='0.7'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 3px 6px rgba(160, 24, 24, 0.5));
+  }
+  .cronologia .evento.alarma::before {
+    /* Veladora encendida para alarmas */
+    width: 24px;
+    height: 38px;
+    left: -42px;
+    top: 22px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 38' width='24' height='38'><g><rect x='8' y='14' width='8' height='22' fill='%23d4a449' stroke='%23000' stroke-width='0.5'/><rect x='6' y='32' width='12' height='4' fill='%238b6914'/><ellipse cx='12' cy='8' rx='3.5' ry='6' fill='%23ffeb3b'/><ellipse cx='12' cy='10' rx='2.2' ry='4' fill='%23ff9800'/><circle cx='12' cy='12' r='1' fill='%23ff5722'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 0 6px rgba(255, 152, 0, 0.6));
+    animation: parpadeo-veladora 0.8s ease-in-out infinite alternate;
+  }
+  @keyframes parpadeo-veladora {
+    from { opacity: 0.9; }
+    to { opacity: 1; filter: drop-shadow(0 0 10px rgba(255, 152, 0, 0.85)); }
+  }
+  .cronologia .evento .fecha {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--cempasuchil);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .cronologia .evento .hecho {
+    font-size: 16px;
+    color: var(--ink);
+    text-align: justify;
+    hyphens: auto;
+  }
+  .cronologia .evento .hecho strong { color: var(--cempasuchil-claro); }
+  .cronologia .evento .fuente {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--ink-dim);
+    font-style: italic;
+  }
+
+  /* ========================= MODAL ========================= */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    animation: fadein 0.2s ease;
+  }
+  .modal-overlay.activo { display: flex; }
+  .modal {
+    background: var(--bg-card-elev);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--cempasuchil);
+    max-width: 760px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.85);
+    animation: slidein 0.25s ease;
+  }
+  /* Esquinas de cempasúchil sobre el modal — marco de ofrenda */
+  .modal::before, .modal::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    width: 46px;
+    height: 46px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40'><g><circle cx='20' cy='6' r='6' fill='%23ff8c00'/><circle cx='32' cy='12' r='5.5' fill='%23ff8c00'/><circle cx='35' cy='22' r='5' fill='%23ff8c00'/><circle cx='32' cy='30' r='5.5' fill='%23ff8c00'/><circle cx='20' cy='34' r='6' fill='%23ff8c00'/><circle cx='8' cy='30' r='5.5' fill='%23ff8c00'/><circle cx='5' cy='22' r='5' fill='%23ff8c00'/><circle cx='8' cy='12' r='5.5' fill='%23ff8c00'/><circle cx='20' cy='14' r='5' fill='%23f5a623'/><circle cx='27' cy='18' r='4.5' fill='%23f5a623'/><circle cx='27' cy='26' r='4.5' fill='%23f5a623'/><circle cx='20' cy='30' r='5' fill='%23f5a623'/><circle cx='13' cy='26' r='4.5' fill='%23f5a623'/><circle cx='13' cy='18' r='4.5' fill='%23f5a623'/><circle cx='20' cy='22' r='6' fill='%23ffc857'/><circle cx='20' cy='22' r='3' fill='%23a05a0a'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 3;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.6));
+  }
+  .modal::before { left: -16px; transform: rotate(-22deg); }
+  .modal::after { right: -16px; transform: rotate(22deg); }
+  /* Calavera de azúcar junto al título del modal */
+  .modal h3::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 32px;
+    margin-right: 12px;
+    vertical-align: -6px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32' width='28' height='32'><g><path d='M14 2 Q3 2 3 14 Q3 21 8 26 L8 28 L11 28 L11 26 L17 26 L17 28 L20 28 L20 26 Q25 21 25 14 Q25 2 14 2 Z' fill='%23f5e6d3' stroke='%23000' stroke-width='0.6'/><ellipse cx='9' cy='12' rx='2.2' ry='3' fill='%230c0c0e'/><ellipse cx='19' cy='12' rx='2.2' ry='3' fill='%230c0c0e'/><circle cx='9' cy='12' r='1.2' fill='%23e91e63'/><circle cx='19' cy='12' r='1.2' fill='%239c27b0'/><path d='M14 15 L12.5 19 L14 20 L15.5 19 Z' fill='%230c0c0e'/><circle cx='14' cy='7' r='1.4' fill='%23e91e63'/><circle cx='8' cy='8' r='0.9' fill='%2300bcd4'/><circle cx='20' cy='8' r='0.9' fill='%23ffc857'/><line x1='11' y1='22' x2='11' y2='25' stroke='%230c0c0e' stroke-width='0.6'/><line x1='14' y1='22' x2='14' y2='25' stroke='%230c0c0e' stroke-width='0.6'/><line x1='17' y1='22' x2='17' y2='25' stroke='%230c0c0e' stroke-width='0.6'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.6));
+  }
+  /* Veladora junto al título de la leyenda */
+  .modal .leyenda-bloque h4::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 22px;
+    margin-right: 8px;
+    vertical-align: -7px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 22' width='14' height='22'><g><rect x='4' y='8' width='6' height='13' fill='%23d4a449' stroke='%23000' stroke-width='0.4'/><rect x='3' y='19' width='8' height='2' fill='%238b6914'/><ellipse cx='7' cy='5' rx='2' ry='3.5' fill='%23ffeb3b'/><ellipse cx='7' cy='6' rx='1.2' ry='2.4' fill='%23ff9800'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 0 4px rgba(255, 152, 0, 0.55));
+  }
+  /* Marco de cempasúchil en la captura */
+  .modal .captura img {
+    border: 2px solid var(--cempasuchil);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6), 0 0 0 4px var(--bg-card-elev), 0 0 0 5px var(--rule);
+  }
+  /* Papel picado al pie del modal */
+  .modal .modal-pie-papel {
+    height: 22px;
+    margin-top: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='22' viewBox='0 0 180 22'><g><path d='M10 0 L25 18 L40 0 Z M35 0 L50 18 L65 0 Z M60 0 L75 18 L90 0 Z M85 0 L100 18 L115 0 Z M110 0 L125 18 L140 0 Z M135 0 L150 18 L165 0 Z' fill='%23e91e63'/><path d='M0 18 L180 18 L180 22 L0 22 Z' fill='%23e91e63'/></g></svg>");
+    background-repeat: repeat-x;
+    background-position: top;
+  }
+  @keyframes slidein {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal .modal-papel {
+    height: 28px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='28' viewBox='0 0 180 28'><g><path d='M0 0 L180 0 L180 4 L0 4 Z' fill='%23f5a623'/><path d='M10 4 L25 22 L40 4 Z M35 4 L50 22 L65 4 Z M60 4 L75 22 L90 4 Z M85 4 L100 22 L115 4 Z M110 4 L125 22 L140 4 Z M135 4 L150 22 L165 4 Z' fill='%23f5a623'/></g></svg>");
+    background-repeat: repeat-x;
+  }
+  .modal .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+    transition: all 0.15s ease;
+  }
+  .modal .modal-close:hover {
+    background: var(--cempasuchil);
+    color: #1a1a1e;
+    border-color: var(--cempasuchil);
+  }
+  .modal .modal-body { padding: 36px 40px 32px; }
+  .modal .modal-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    margin-bottom: 14px;
+  }
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .modal .rol {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 15px;
+    margin-bottom: 22px;
+  }
+  .modal dl.epitafio-completo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 18px;
+    font-size: 14px;
+    margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+  }
+  .modal dl.epitafio-completo dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    padding-top: 2px;
+  }
+  .modal dl.epitafio-completo dd {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    word-break: break-all;
+  }
+  .modal dl.epitafio-completo dd.diagnostico {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--cempasuchil-claro);
+    text-align: justify;
+    hyphens: auto;
+  }
+  .modal .leyenda-bloque {
+    background: rgba(245, 166, 35, 0.05);
+    border-left: 3px solid var(--cempasuchil);
+    padding: 18px 22px;
+    margin-bottom: 24px;
+  }
+  .modal .leyenda-bloque h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--cempasuchil);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .modal .leyenda-bloque p {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    text-align: justify;
+    hyphens: auto;
+  }
+  .modal .captura {
+    margin-top: 24px;
+  }
+  .modal .captura h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .modal .captura img {
+    width: 100%;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    display: block;
+  }
+  .modal .captura-placeholder {
+    background: rgba(0,0,0,0.3);
+    border: 1px dashed var(--rule);
+    padding: 36px 24px;
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 14px;
+    font-style: italic;
+  }
+  .modal .captura-placeholder code {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--cempasuchil);
+    font-size: 12px;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 8px;
+    margin-top: 8px;
+    display: inline-block;
+  }
+
+  /* ========================= TABLA MAESTRA ========================= */
+  .tabla-controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+  }
+  .tabla-controles input[type="search"] {
+    flex: 1 1 280px;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 10px 14px;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+  }
+  .tabla-controles input[type="search"]:focus {
+    outline: none;
+    border-color: var(--cempasuchil);
+  }
+  .tabla-controles .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tabla-controles .filtro {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-dim);
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .tabla-controles .filtro:hover { color: var(--ink); border-color: var(--cempasuchil); }
+  .tabla-controles .filtro.activo {
+    background: var(--cempasuchil);
+    color: #1a1a1e;
+    border-color: var(--cempasuchil);
+    font-weight: 600;
+  }
+
+  .tabla-maestra {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  .tabla-maestra th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    font-weight: 600;
+    text-align: left;
+    padding: 14px 12px;
+    background: rgba(0,0,0,0.3);
+    border-bottom: 2px solid var(--cempasuchil);
+  }
+  .tabla-maestra td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .tabla-maestra tr:hover { background: rgba(245, 166, 35, 0.04); }
+  .tabla-maestra td.estado-cell {
+    width: 36px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .tabla-maestra td.estado-cell.ok { color: var(--funciona); }
+  .tabla-maestra td.estado-cell.no { color: var(--sangre); }
+  .tabla-maestra td.estado-cell.mid { color: var(--alarma); }
+  .tabla-maestra td.url-cell {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    word-break: break-all;
+  }
+  .tabla-maestra td.estado-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tabla-maestra .institucion-cell { color: var(--ink); }
+  .tabla-maestra .institucion-cell .tipo {
+    display: block;
+    font-size: 11px;
+    color: var(--ink-dim);
+    font-style: italic;
+    margin-top: 2px;
+  }
+  .tabla-maestra .ver-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--cempasuchil);
+    padding: 4px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .tabla-maestra .ver-btn:hover {
+    background: var(--cempasuchil);
+    color: #1a1a1e;
+  }
+  .conteo-resultados {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-dim);
+    margin-top: 16px;
+    letter-spacing: 0.1em;
+  }
+  .conteo-resultados span { color: var(--cempasuchil); }
+
+  /* ========================= COMPARATIVA ========================= */
+  .comparativa {
+    margin: 0 auto;
+    max-width: 880px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--cempasuchil);
+    padding: 36px 32px;
+  }
+  .comparativa table { width: 100%; border-collapse: collapse; }
+  .comparativa caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .comparativa .pie {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .comparativa th, .comparativa td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14.5px;
+    vertical-align: top;
+  }
+  .comparativa th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cempasuchil);
+    border-bottom: 1px solid var(--cempasuchil);
+    font-weight: 600;
+  }
+  .comparativa td.cambio {
+    color: var(--sangre);
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .comparativa tr:last-child td { border-bottom: none; }
+
+  /* ========================= GLOSARIO ========================= */
+  .glosario {
+    max-width: 880px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .glosario .entrada {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--cempasuchil);
+    padding: 20px 22px;
+  }
+  .glosario .entrada h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cempasuchil-claro);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+  .glosario .entrada h4 .abrev {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-dim);
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .glosario .entrada p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* ========================= FUENTES ========================= */
+  .fuentes-lista {
+    max-width: 820px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+  }
+  .fuentes-lista .fuente {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .fuentes-lista .fuente .tipo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--cempasuchil);
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+  .fuentes-lista .fuente .info a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted var(--sepia);
+  }
+  .fuentes-lista .fuente .info a:hover {
+    color: var(--cempasuchil);
+    border-bottom-color: var(--cempasuchil);
+  }
+  .fuentes-lista .fuente .info .descripcion {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-dim);
+    font-style: italic;
+    margin-top: 4px;
+  }
+  @media (max-width: 600px) {
+    .fuentes-lista .fuente { grid-template-columns: 1fr; }
+  }
+
+  /* ========================= FOOTER ========================= */
+  footer.cierre {
+    margin-top: 96px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  footer.cierre .firma {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--cempasuchil);
+    margin-bottom: 16px;
+  }
+  footer.cierre p {
+    font-size: 13px;
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin: 0 auto 12px;
+  }
+
+  /* PRINT */
+  @media print {
+    nav.tabs { display: none; }
+    section.contenido { display: block !important; page-break-after: always; }
+    body { background: white; color: black; }
+    .lapida { background: #eee; color: #111; box-shadow: none; }
+    .modal-overlay { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="papel-picado"></div>
+
+<div class="wrap">
+
+  <!-- ENCABEZADO -->
+  <header class="titular">
+    <p class="eyebrow">45 Digital Noticias · Expediente Opacidad Morelos</p>
+    <h1>
+      El Cementerio<br>
+      de la Transparencia
+      <span class="small">Morelos · 2026</span>
+    </h1>
+    <div class="calaveritas">☠ ✿ ☠ ✿ ☠</div>
+    <p class="tagline">Aquí yacen los sitios oficiales que, por ley, debían estar vivos.</p>
+    <p class="meta">Verificación técnica del <span id="m-header-fecha">19 de mayo de 2026</span> · <span id="m-header-total">29</span> dominios probados</p>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="tabs">
+    <div class="tabs-inner">
+      <button data-tab="apertura" class="active">Apertura</button>
+      <button data-tab="analisis">Análisis</button>
+      <button data-tab="cementerio">Cementerio</button>
+      <button data-tab="tabla">Tabla maestra</button>
+      <button data-tab="comparativa">Comparativa</button>
+      <button data-tab="cronologia">Cronología</button>
+      <button data-tab="glosario">Glosario</button>
+      <button data-tab="fuentes">Fuentes</button>
+    </div>
+  </nav>
+
+  <!-- ====================== SECCIÓN: MANIFIESTO ====================== -->
+  <section class="contenido activa" id="apertura">
+    <h2 class="seccion">Apertura</h2>
+    <p class="sub-seccion">Por qué este cementerio existe.</p>
+
+    <!-- MARCADOR VIVO DEL EXPEDIENTE -->
+    <div class="marcador-expediente" id="marcador-expediente">
+      <div class="marcador-header">
+        <div class="marcador-eyebrow">Marcador del expediente · <span id="m-fecha">19 de mayo de 2026</span></div>
+        <h3 class="marcador-titulo">
+          Día <span class="cifra-grande" id="m-dia">596</span> del gobierno de <strong>Margarita González Saravia</strong>
+        </h3>
+        <p class="marcador-sub">
+          Gobernadora constitucional de Morelos desde el <strong>1 de octubre de 2024</strong>.
+          Lleva <span id="m-duracion">1 año, 7 meses y 18 días</span> en el cargo, periodo durante el cual el expediente documenta la condición de los sitios oficiales que, por ley, debían estar vivos.
+        </p>
+      </div>
+
+      <div class="marcador-kpis">
+        <div class="kpi">
+          <div class="kpi-numero" id="m-total">30</div>
+          <div class="kpi-label">Sitios oficiales revisados</div>
+        </div>
+        <div class="kpi kpi-verde">
+          <div class="kpi-numero" id="m-funcionan">9</div>
+          <div class="kpi-label">Funcionan · <span id="m-pct-funcionan">30%</span></div>
+        </div>
+        <div class="kpi kpi-rojo">
+          <div class="kpi-numero" id="m-fallan">21</div>
+          <div class="kpi-label">Caídos, vacíos o bloqueados · <span id="m-pct-fallan">70%</span></div>
+        </div>
+      </div>
+
+      <div class="marcador-barra">
+        <div class="barra-track">
+          <div class="barra-fill barra-fallan" id="m-bar-fallan" style="width:70%"></div>
+          <div class="barra-fill barra-funcionan" id="m-bar-funcionan" style="width:30%"></div>
+        </div>
+        <div class="barra-leyenda">
+          <span class="leyenda-item">
+            <span class="punto punto-rojo"></span>
+            <span id="m-leyenda-fallan">21 no funcionan al ciudadano (70%)</span>
+          </span>
+          <span class="leyenda-item">
+            <span class="punto punto-verde"></span>
+            <span id="m-leyenda-funcionan">9 funcionan (30%)</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="marcador-detalle">
+        <div class="marcador-detalle-titulo">Desglose de los <span id="m-detalle-num">21</span> que no sirven al ciudadano</div>
+        <div class="detalle-grid" id="m-detalle-grid">
+          <!-- Items inyectados dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <div class="apertura">
+      <p>Cuando un ciudadano pregunta a un funcionario por un contrato, el funcionario responde: <em>"pida la información por transparencia"</em>.</p>
+      <p>Lo que el funcionario calla es que la Ley General de Transparencia <strong>no exige solicitud</strong>: obliga a publicar <strong>48 fracciones</strong> de información pública por su cuenta, sin que nadie las pida. Esa es la diferencia entre transparencia real y transparencia teatral.</p>
+      <blockquote class="cita">
+        "La sociedad de la transparencia es una sociedad de la desconfianza y la sospecha, que sustituye la confianza por el control. La transparencia se vuelve obscena cuando lo enseña todo y, al mismo tiempo, ya no enseña nada."
+        <cite>Byung-Chul Han · La sociedad de la transparencia (2012)</cite>
+      </blockquote>
+      <p>Este cementerio documenta, sitio por sitio, dónde la transparencia morelense se quedó en cáscara: portales caídos, portales que sólo muestran un eslogan, órganos extintos sin sucesor funcional, sistemas que bloquean al ciudadano que intenta consultarlos. Cada lápida lleva, al abrirla, la línea de la ley que se incumple — en lenguaje claro, para que la obligación no se siga escondiendo detrás del tecnicismo.</p>
+      <p>El velorio es a propósito festivo. En Día de Muertos los mexicanos celebramos a los que se fueron <em>porque siguen vivos en la memoria</em>. Estas instituciones siguen vivas sobre el papel — y sólo sobre el papel. Que la ironía sea evidente.</p>
+    </div>
+  </section>
+
+  <!-- ====================== SECCIÓN: ANÁLISIS (COLUMNA) ====================== -->
+  <section class="contenido" id="analisis">
+    <h2 class="seccion">Análisis</h2>
+    <p class="sub-seccion">La columna del expediente.</p>
+
+    <article class="columna-editorial">
+
+      <header class="columna-header">
+        <div class="columna-eyebrow">Columna editorial · 45 Digital Noticias</div>
+        <h1 class="columna-titulo">El timo de la transparencia</h1>
+        <p class="columna-subtitulo">La nueva arquitectura del derecho a saber, leída desde un cementerio digital morelense.</p>
+        <div class="columna-meta"><span>Pieza vinculada al programa del</span> 20 de mayo de 2026</div>
+      </header>
+
+      <div class="columna-cuerpo">
+
+        <p class="con-capital">Hace cinco siglos, los frailes mendicantes inventaron en la Nueva España un truco contable: las cuentas se llevaban en doble entrada, pero los libros que el visitador del rey leía no eran los mismos que los del archivo interno. La doble contabilidad no la inventaron los empresarios del siglo XXI: nació con la maquinaria misma del Estado virreinal. Lo que cambió fue la palabra. Antes se llamaba <em>encubrimiento</em>. Hoy se llama <em>transparencia</em>.</p>
+
+        <p>México vive el tercer momento de su historia institucional reciente en que un gobierno decide reemplazar el aparato fiscalizador autónomo por uno que depende del Ejecutivo. Esta vez no se hizo por decreto, se hizo por reforma constitucional. El Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos —el INAI— fue extinguido el 12 de mayo de 2025. En su lugar, el gobierno federal creó un organismo con nombre publicitario: <em>Transparencia para el Pueblo</em>.</p>
+
+        <p>Lo dijo la propia secretaria de Anticorrupción y Buen Gobierno, Raquel Buenrostro: el nuevo organismo asumiría el ochenta por ciento de las funciones del INAI con el cincuenta y dos por ciento menos de presupuesto. Quinientos millones de pesos al año de "ahorro". Lo que no dijo fue lo que cambiaba además del dinero: las cinco voces colegiadas de los comisionados del INAI fueron reemplazadas por una sola titular, designada por el Ejecutivo y dependiente administrativamente de la misma Secretaría a la que en muchos casos tendría que vigilar.</p>
+
+        <p class="destacado">El acusado escoge al juez.</p>
+
+        <p>Tres meses después del estreno, Artículo 19 —organización de defensa de la libertad de información, una de las más sólidas del continente— descargó del propio portal oficial las resoluciones del nuevo organismo y las contó. De dos mil doscientos cincuenta y tres recursos de revisión interpuestos por ciudadanos a quienes el gobierno había negado información, sólo cuatrocientos cincuenta y siete fueron resueltos. De esos cuatrocientos cincuenta y siete, cuatrocientos cincuenta y cinco fueron desechados. El noventa y nueve coma seis por ciento. El organismo respondió con su propio número: catorce coma seis por ciento. Las dos cifras provienen del mismo dataset oficial; lo que las separa es metodología. Pero incluso en la versión más amable al gobierno, ese catorce coma seis supera al peor año del INAI autónomo, cuyo promedio histórico rondaba entre el dieciocho y el treinta por ciento de desecho.</p>
+
+        <p>Lo más revelador del expediente no son las cifras. Es lo que sucede cuando un periodista intenta verificarlas hoy. El portal oficial <em>transparencia.gob.mx</em> opera sin certificado de seguridad válido — los navegadores marcan el sitio como inseguro antes de mostrar contenido. El único conjunto de datos que el organismo publica en datos.gob.mx, el portal nacional de datos abiertos, es un <em>Plan de Apertura</em>: un papel donde el propio organismo se comprometió a publicar nueve tipos de datasets durante 2026. La primera fecha era mayo. Este programa descargó el documento original ayer.</p>
+
+        <p class="destacado">Al diecinueve de mayo de 2026, ningún dataset prometido aparece publicado. El organismo que se llama Transparencia para el Pueblo cumplió con publicar un plan; no con publicar la transparencia.</p>
+
+        <p>En Morelos el modelo federal se replicó con precisión quirúrgica. El IMIPE —organismo morelense autónomo, equivalente local al INAI— fue extinguido por decreto el veintisiete de enero de 2026, doce meses después del federal. El gobierno de Margarita González Saravia, en el día quinientos noventa y seis de su mandato, completó la operación con el decreto del seis de mayo: una <em>Transparencia para el Pueblo de Morelos</em> subordinada administrativamente a la Secretaría Anticorrupción del Ejecutivo estatal. Mismo molde: cinco comisionados colegiados sustituidos por una titular; presupuesto recortado de veintisiete a cinco millones; sin portal funcional a la fecha. Cuatro mil quinientas noventa y nueve quejas ciudadanas que el IMIPE no alcanzó a resolver fueron desechadas, al cierre del instituto, sin pronunciamiento de fondo. Quedaron en el aire.</p>
+
+        <p>Este programa auditó veintinueve sitios oficiales del gobierno de Morelos. Once funcionan. Dieciocho no le sirven al ciudadano: siete son cascarones decorativos, siete no responden, dos son inseguros, uno está extinto y uno nunca tuvo portal. El portal local de transparencia es una pantalla de inicio de sesión con un eslogan. El sitio anterior, <em>transparenciamorelos.mx</em>, sólo muestra el mensaje <em>Sitio No Vigente</em>. El órgano sustituto del IMIPE no tiene siquiera URL pública asignada. La oficina de contrataciones opera bajo aviso permanente de modernización desde hace tanto que el aviso ya es la cosa.</p>
+
+        <blockquote class="cita-eje">
+          <p>"Las instituciones democráticas no se eliminan: se vacían por dentro. La estructura formal permanece, pero la sustancia se evacua."</p>
+          <cite>Wendy Brown · Undoing the Demos (2015)</cite>
+        </blockquote>
+
+        <p>La filósofa estadounidense describió en ese libro el mecanismo: el órgano garante existe, el portal se nombra <em>transparencia</em>, la ley se cita en cada respuesta — pero la sustancia se evacua. Lo que queda es una cáscara que cumple con el lenguaje sin cumplir con la función. Brown la llamaba <em>democracia desovada</em>. Aquí podríamos llamarla <em>transparencia desovada</em>.</p>
+
+        <p>Cuando un ciudadano pregunta hoy a un funcionario por un contrato, el funcionario responde: <em>pida la información por transparencia</em>. Lo que el funcionario calla es que el órgano que recibiría su solicitud depende del mismo Ejecutivo que tiene la información que oculta; que el portal donde tendría que consultar los datos muestra un eslogan en vez de los datos; que la institución que vigilaría que le respondan acaba de ser cancelada; y que la nueva institución desecha entre el catorce y el noventa y nueve por ciento de los recursos que recibe — depende de cómo se cuente, pero siempre por encima del promedio histórico del modelo que sustituyó.</p>
+
+        <p class="destacado">Esto no es accidente burocrático. Es diseño. La opacidad ya no es defecto del aparato estatal: es su rasgo.</p>
+
+        <p class="firma">45 Digital Noticias.</p>
+
+      </div>
+
+      <footer class="columna-pie">
+        <div class="columna-pie-titulo">Para verificar</div>
+        <ul class="columna-pie-lista">
+          <li><strong>Plan de Apertura de Datos TP (CSV oficial descargado):</strong> <code>_expediente-opacidad-morelos/datos/plan_apertura_TP.csv</code> · fuente: datos.gob.mx/organization/tp</li>
+          <li><strong>Auditoría de los 29 sitios oficiales:</strong> ver pestañas <em>Cementerio</em> y <em>Tabla maestra</em></li>
+          <li><strong>Cronograma del desmantelamiento:</strong> ver pestaña <em>Cronología</em></li>
+          <li><strong>Cifras de Artículo 19 (99.6 %) vs. organismo (14.6 %):</strong> ver pestaña <em>Fuentes</em></li>
+        </ul>
+      </footer>
+
+    </article>
+  </section>
+
+  <!-- ====================== SECCIÓN: CEMENTERIO ====================== -->
+  <section class="contenido" id="cementerio">
+    <h2 class="seccion">Cementerio</h2>
+    <p class="sub-seccion">Haz clic en cada lápida para abrir su expediente.</p>
+
+    <div class="papel-picado papel-picado--rosa" style="margin: 0 -28px 0;"></div>
+
+    <div class="cementerio-escena">
+      <div class="estrellas" aria-hidden="true"></div>
+      <div class="luna" aria-hidden="true"></div>
+      <div class="niebla-alta" aria-hidden="true"></div>
+      <div class="horizonte" aria-hidden="true"></div>
+
+      <div class="mariposa mariposa--uno" aria-hidden="true"></div>
+      <div class="mariposa mariposa--dos" aria-hidden="true"></div>
+      <div class="mariposa mariposa--tres" aria-hidden="true"></div>
+
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+      <div class="petalo" aria-hidden="true"></div>
+
+      <div class="catrina" aria-hidden="true"></div>
+
+      <div class="sahumerio" aria-hidden="true">
+        <div class="recipiente"></div>
+        <div class="humo"></div>
+        <div class="humo"></div>
+        <div class="humo"></div>
+      </div>
+
+      <div class="cementerio" id="cementerio-grid">
+        <!-- Las lápidas se inyectan con JavaScript -->
+      </div>
+
+      <div class="niebla" aria-hidden="true"></div>
+    </div>
+
+    <div class="papel-picado papel-picado--turq" style="margin: 0 -28px 0;"></div>
+  </section>
+
+  <!-- ====================== SECCIÓN: TABLA MAESTRA ====================== -->
+  <section class="contenido" id="tabla">
+    <h2 class="seccion">Tabla maestra</h2>
+    <p class="sub-seccion">Todos los sitios probados. Filtra por estado o busca por nombre.</p>
+
+    <div class="tabla-controles">
+      <input type="search" id="buscador" placeholder="Buscar por institución o URL…" aria-label="Buscar">
+      <div class="filtros" role="group" aria-label="Filtros">
+        <button class="filtro activo" data-filtro="todos">Todos</button>
+        <button class="filtro" data-filtro="funciona">✓ Funcionan</button>
+        <button class="filtro" data-filtro="no-funciona">✗ No funcionan</button>
+        <button class="filtro" data-filtro="cascaron">Cascarones</button>
+        <button class="filtro" data-filtro="extinto">Extintos</button>
+        <button class="filtro" data-filtro="bloqueado">Bloqueados</button>
+      </div>
+    </div>
+
+    <table class="tabla-maestra">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Institución</th>
+          <th>URL</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tabla-body">
+        <!-- inyectado por JS -->
+      </tbody>
+    </table>
+
+    <div class="conteo-resultados" id="conteo">Mostrando <span id="visibles">0</span> de <span id="total">0</span> sitios</div>
+  </section>
+
+  <!-- ====================== SECCIÓN: COMPARATIVA ====================== -->
+  <section class="contenido" id="comparativa">
+    <h2 class="seccion">Comparativa</h2>
+    <p class="sub-seccion">El recorte cuantificado del órgano garante.</p>
+
+    <div class="comparativa">
+      <table>
+        <caption>IMIPE vs. "Transparencia para el Pueblo de Morelos"</caption>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>IMIPE (hasta enero 2026)</th>
+            <th>Sustituto (desde mayo 2026)</th>
+            <th>Cambio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Naturaleza jurídica</td><td>Órgano constitucional autónomo</td><td>Dependencia del Ejecutivo</td><td class="cambio">Pierde autonomía</td></tr>
+          <tr><td>Patrimonio</td><td>Propio</td><td>Asignado por el Ejecutivo</td><td class="cambio">Pierde patrimonio</td></tr>
+          <tr><td>Decisión sobre reservas</td><td>Colegiada · 5 comisionados</td><td>Unipersonal · 1 titular</td><td class="cambio">5 → 1</td></tr>
+          <tr><td>Presupuesto anual</td><td>27 millones de pesos</td><td>5 millones de pesos</td><td class="cambio">−81 %</td></tr>
+          <tr><td>Portal web</td><td>imipe.org.mx · archivo congelado</td><td>(sin portal asignado)</td><td class="cambio">Sin sustituto</td></tr>
+          <tr><td>Perfil de titular</td><td>Requisitos de experiencia comprobables</td><td>Señalada por carecer del requisito legal</td><td class="cambio">Pierde perfil técnico</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====================== SECCIÓN: CRONOLOGÍA ====================== -->
+  <section class="contenido" id="cronologia">
+    <h2 class="seccion">Cronología</h2>
+    <p class="sub-seccion">Cómo se construyó el cementerio en quince meses.</p>
+
+    <div class="cronologia">
+      <div class="evento alarma">
+        <p class="fecha">Marzo de 2025</p>
+        <p class="hecho">La <strong>reforma federal</strong> ordena a los Congresos locales extinguir sus órganos garantes autónomos de transparencia en un plazo de noventa días.<span class="fuente">Diario Oficial de la Federación</span></p>
+      </div>
+      <div class="evento alarma">
+        <p class="fecha">13 de diciembre de 2025</p>
+        <p class="hecho">El <strong>Congreso de Morelos extingue el IMIPE</strong> por 14 votos a favor y 4 en contra. Crea, en su lugar, la Secretaría Anticorrupción y Buen Gobierno.<span class="fuente">La Jornada · Proceso · La Jornada Morelos</span></p>
+      </div>
+      <div class="evento muerte">
+        <p class="fecha">27 de enero de 2026</p>
+        <p class="hecho">El decreto de extinción se publica en el Periódico Oficial <em>Tierra y Libertad</em>. <strong>La autonomía constitucional del órgano garante deja de existir.</strong><span class="fuente">Periódico Oficial Tierra y Libertad</span></p>
+      </div>
+      <div class="evento">
+        <p class="fecha">6 de mayo de 2026</p>
+        <p class="hecho">Se publica el decreto que crea <strong>"Transparencia para el Pueblo de Morelos"</strong>, dependencia subordinada al Ejecutivo. Presupuesto: cinco millones de pesos. Decisión unipersonal. Sin portal asignado.<span class="fuente">Diario de Morelos · La Unión Morelos</span></p>
+      </div>
+      <div class="evento alarma">
+        <p class="fecha">13 de mayo de 2026</p>
+        <p class="hecho">Especialistas en transparencia <strong>denuncian públicamente</strong> que la titular del nuevo organismo "carece del requisito legal" de experiencia comprobable en la materia.<span class="fuente">Revista Cauce Legal</span></p>
+      </div>
+      <div class="evento muerte">
+        <p class="fecha">18 de mayo de 2026</p>
+        <p class="hecho">Una columna nacional sin firma señala una supuesta investigación de Estados Unidos contra la gobernadora Margarita González Saravia. El gobierno desmiente el mismo día.<span class="fuente">Infobae · Quadratín · TV Azteca</span></p>
+      </div>
+      <div class="evento alarma">
+        <p class="fecha">19 de mayo de 2026</p>
+        <p class="hecho"><strong>Verificación técnica de 45 Digital Noticias:</strong> de 29 dominios oficiales probados, 18 presentan defunción operativa. El órgano sustituto del IMIPE no tiene portal. Compras Morelos opera bajo aviso permanente de modernización. Siete secretarías o subdominios oficiales no responden.<span class="fuente">Este expediente</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SECCIÓN: GLOSARIO ====================== -->
+  <section class="contenido" id="glosario">
+    <h2 class="seccion">Glosario</h2>
+    <p class="sub-seccion">Los términos legales en lenguaje claro.</p>
+
+    <div class="glosario">
+      <div class="entrada">
+        <h4>LGTAIP <span class="abrev">Ley general</span></h4>
+        <p>Ley General de Transparencia y Acceso a la Información Pública. La ley federal que define qué información debe ser pública y cómo deben cumplir las instituciones esa obligación. Aplica a los tres niveles de gobierno y a todos los poderes y órganos autónomos.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Artículo 70 <span class="abrev">El núcleo</span></h4>
+        <p>El artículo de la LGTAIP que enumera las 48 fracciones de información que toda institución pública debe publicar <em>de oficio</em>. Incluye sueldos, viáticos, contratos, padrón de proveedores, gastos en publicidad, declaraciones patrimoniales y resultados de auditorías. Es el listado que aquí se incumple.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Sujeto obligado</h4>
+        <p>Toda institución que recibe presupuesto público y está obligada a transparentar su actuar: secretarías, organismos descentralizados, fiscalías, tribunales, comisiones, partidos políticos, sindicatos. En Morelos hay alrededor de 120 sujetos obligados.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Transparencia proactiva</h4>
+        <p>Es la obligación de publicar información <em>sin que nadie la pida</em>. Es lo contrario a la transparencia reactiva, que sólo entrega información si un ciudadano la solicita. La LGTAIP exige la primera y la segunda — no una u otra.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Órgano garante</h4>
+        <p>La institución autónoma encargada de vigilar que los demás sujetos obligados cumplan con la ley de transparencia. En Morelos era el IMIPE hasta enero de 2026. Su sucesor, "Transparencia para el Pueblo de Morelos", ya no es autónomo: depende del Ejecutivo.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>IMIPE</h4>
+        <p>Instituto Morelense de Información Pública y Estadística. Fue el órgano autónomo encargado de vigilar la transparencia en Morelos. Extinto por decreto el 27 de enero de 2026 después de que el Congreso aprobara su disolución en diciembre de 2025.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Padrón de proveedores</h4>
+        <p>Registro público de las personas físicas y morales que han firmado contratos con el gobierno. Permite saber quién le vende qué al Estado, por cuánto y con qué frecuencia. Por ley, debe ser consultable en el portal de compras del gobierno. En Morelos, hoy, no lo es.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Adjudicación directa</h4>
+        <p>Modalidad de contratación en la que el gobierno elige a un proveedor sin abrir concurso. Está permitida bajo ciertos supuestos, pero es la vía favorita para contratar pauta publicitaria. Su uso intensivo y opaco es lo que permite premiar o castigar medios discrecionalmente.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Pauta oficial</h4>
+        <p>El gasto del gobierno en publicidad — spots de radio y televisión, inserciones en periódicos, banners digitales, redes sociales. La ley exige transparentar cuánto se gastó, en qué medios y con qué criterio se eligió a cada uno.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>PNT <span class="abrev">Plataforma Nacional</span></h4>
+        <p>Plataforma Nacional de Transparencia (<code>plataformadetransparencia.org.mx</code>). El sistema federal donde todos los sujetos obligados del país suben sus 48 fracciones de información pública. Es el respaldo cuando un portal local no funciona.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Reserva</h4>
+        <p>Clasificar una información como no pública por causales legales — seguridad nacional, datos personales, secreto comercial. La decisión sobre qué es reservado solía recaer en cinco comisionados del IMIPE. Hoy recae en una sola persona dependiente del Ejecutivo.</p>
+      </div>
+
+      <div class="entrada">
+        <h4>Cuenta Pública</h4>
+        <p>Documento donde el gobierno reporta cómo gastó el presupuesto del año. La revisa la Entidad Superior de Auditoría (ESAF en Morelos). Es la fuente más confiable para saber cuánto se pagó a cada proveedor y por qué concepto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SECCIÓN: FUENTES ====================== -->
+  <section class="contenido" id="fuentes">
+    <h2 class="seccion">Fuentes</h2>
+    <p class="sub-seccion">Todo lo aquí publicado es verificable.</p>
+
+    <div class="fuentes-lista">
+      <div class="fuente">
+        <div class="tipo">Prensa</div>
+        <div class="info">
+          <a href="https://www.jornada.com.mx/noticia/2025/12/13/estados/congreso-de-morelos-extingue-el-imipe-y-crea-la-secretaria-anticorrupcion" target="_blank" rel="noopener">Congreso de Morelos extingue el IMIPE — La Jornada</a>
+          <span class="descripcion">Crónica de la sesión donde se votó la extinción del órgano garante.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Prensa</div>
+        <div class="info">
+          <a href="https://www.proceso.com.mx/nacional/estados/2025/12/14/congreso-de-morelos-extingue-el-organismo-de-transparencia-crea-secretaria-anticorrupcion-364669.html" target="_blank" rel="noopener">Congreso extingue organismo de transparencia — Proceso</a>
+          <span class="descripcion">Cobertura del proceso legislativo y reacciones.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Análisis</div>
+        <div class="info">
+          <a href="https://revistacaucelegal.com/2026/05/13/el-nuevo-imipe-y-su-autonomia/" target="_blank" rel="noopener">El nuevo IMIPE y su "autonomía" — Cauce Legal</a>
+          <span class="descripcion">Crítica especializada al diseño del nuevo organismo: pérdida de autonomía, recorte presupuestal, perfil de la titular.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Prensa</div>
+        <div class="info">
+          <a href="https://www.diariodemorelos.com/noticias/nace-transparencia-pueblo-nuevo-guardian-cuentas-claras-en-morelos" target="_blank" rel="noopener">Nace "Transparencia para el Pueblo" — Diario de Morelos</a>
+          <span class="descripcion">Presentación oficial del nuevo organismo y su mandato sobre 120 sujetos obligados.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Verificación</div>
+        <div class="info">
+          <a href="https://verificado.com.mx/transparencia-para-el-pueblo-sustituye-al-inai/" target="_blank" rel="noopener">"Transparencia para el Pueblo" sustituye al INAI — Verificado</a>
+          <span class="descripcion">Análisis del modelo federal homólogo, contexto que explica el caso morelense.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Datos</div>
+        <div class="info">
+          <a href="https://morelosrindecuentas.org.mx/" target="_blank" rel="noopener">Morelos Rinde Cuentas</a>
+          <span class="descripcion">Asociación civil que documenta proveedores con mayor gasto en comunicación social del gobierno estatal.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Oficial</div>
+        <div class="info">
+          <a href="https://www.plataformadetransparencia.org.mx/" target="_blank" rel="noopener">Plataforma Nacional de Transparencia</a>
+          <span class="descripcion">El sistema federal donde todos los sujetos obligados del país deben subir sus obligaciones de transparencia.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Oficial</div>
+        <div class="info">
+          <a href="https://pnmi.segob.gob.mx/reporte" target="_blank" rel="noopener">Padrón Nacional de Medios Impresos — SEGOB</a>
+          <span class="descripcion">Listado federal de medios certificados para recibir pauta publicitaria oficial.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Concepto</div>
+        <div class="info">
+          <a href="https://es.wikipedia.org/wiki/La_sociedad_de_la_transparencia" target="_blank" rel="noopener">Byung-Chul Han · La sociedad de la transparencia (2012)</a>
+          <span class="descripcion">Ensayo del filósofo coreano-alemán sobre la transparencia teatral como dispositivo de control y simulación.</span>
+        </div>
+      </div>
+      <div class="fuente">
+        <div class="tipo">Prensa</div>
+        <div class="info">
+          <a href="https://www.infobae.com/mexico/2026/05/18/gobierno-de-morelos-niega-que-hayan-medidas-migratorias-contra-la-gobernadora-gonzalez-saravia/" target="_blank" rel="noopener">Gobierno de Morelos niega medidas migratorias — Infobae</a>
+          <span class="descripcion">Cobertura del trascendido del 18 de mayo de 2026 y su desmentido oficial.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="cierre">
+    <p class="firma">45 Digital Noticias.</p>
+    <p>Expediente Opacidad Morelos · Cementerio de la Transparencia.</p>
+    <p>Verificación inicial: 19 de mayo de 2026 · El cementerio se actualiza cuando un sitio cambia de estado.</p>
+  </footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+  <div class="modal" id="modal">
+    <div class="modal-papel"></div>
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+    <div class="modal-body" id="modal-body">
+      <!-- contenido inyectado -->
+    </div>
+  </div>
+</div>
+
+<script>
+/* ========================================================================
+   DATOS — todos los sitios verificados el 2026-05-19
+   ======================================================================== */
+const sitios = [
+  /* ====== FUNCIONAN ====== */
+  {
+    id: 'portal-principal', nombre: 'Portal principal del Estado',
+    rol: 'Página de inicio del gobierno estatal',
+    url: 'www.morelos.gob.mx', tipo: 'Poder Ejecutivo',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga normal. Es la puerta general del gobierno.',
+    leyTitulo: '', leyTexto: '',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'congreso', nombre: 'Congreso del Estado',
+    rol: 'Poder Legislativo',
+    url: 'www.congresomorelos.gob.mx', tipo: 'Poder Legislativo',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga normal.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'esaf', nombre: 'ESAF — Auditoría Superior',
+    rol: 'Órgano técnico de fiscalización del Congreso',
+    url: 'esaf-morelos.gob.mx', tipo: 'Auditoría',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga normal. Incluye secciones de denuncia ciudadana, auditorías, transparencia y declaraciones patrimoniales.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'tsj', nombre: 'Tribunal Superior de Justicia',
+    rol: 'Poder Judicial del Estado',
+    url: 'tsjmorelos.gob.mx', tipo: 'Poder Judicial',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga normal.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'tja', nombre: 'Tribunal de Justicia Administrativa',
+    rol: 'Órgano jurisdiccional administrativo',
+    url: 'tjamorelos.gob.mx', tipo: 'Tribunal',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga normal.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'fiscalia-general', nombre: 'Fiscalía General del Estado',
+    rol: 'Órgano constitucional autónomo',
+    url: 'www.fiscaliamorelos.gob.mx', tipo: 'Fiscalía',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga sólo con su dominio independiente; las variantes de subdominio del Estado (fiscalia.morelos.gob.mx, fge.morelos.gob.mx) no responden.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'denuncia-digital', nombre: 'Denuncia Digital de la Fiscalía',
+    rol: 'Sistema en línea para presentar denuncias',
+    url: 'denuncia.fiscaliamorelos.gob.mx', tipo: 'Fiscalía / sistema',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '', diagnostico: 'Carga normal. Requiere autenticación con Llave MX.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'periodico-ejemplares', nombre: 'Periódico Oficial — Listado de ejemplares',
+    rol: 'Archivo de publicaciones oficiales',
+    url: 'periodico.morelos.gob.mx/ejemplares', tipo: 'Publicaciones oficiales',
+    estado: 'funciona', estadoLabel: 'Funcional (sólo esta ruta)',
+    fecha: '', diagnostico: 'El listado de ejemplares sí carga, aunque la home principal queda colgada en "Cargando".',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'impepac', nombre: 'IMPEPAC',
+    rol: 'Instituto Morelense de Procesos Electorales',
+    url: 'impepac.mx → jornada.impepac.mx', tipo: 'Órgano autónomo electoral',
+    estado: 'funciona', estadoLabel: 'Funcional (con redirección)',
+    fecha: '', diagnostico: 'Redirige con un 302 a un subdominio "jornada", patrón inusual para un órgano electoral.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'avisos-privacidad', nombre: 'Avisos de Privacidad GEM',
+    rol: 'Anexo de la Secretaría Anticorrupción',
+    url: 'avisosprivacidad.morelos.gob.mx', tipo: 'Anexo',
+    estado: 'cascaron', estadoLabel: 'Cascarón funcional',
+    fecha: '',
+    diagnostico: 'Carga la cabecera institucional y la atribución a la Agencia de Transformación Digital, sin publicar avisos consultables.',
+    leyTitulo: 'Lo que la ley dice', leyTexto: 'La Ley General de Protección de Datos Personales obliga a publicar los avisos de privacidad de cada sistema gubernamental. Aquí no hay ninguno consultable. El sitio cumple con existir, no con informar.',
+    enCementerio: true, esHero: false
+  },
+
+  /* ====== EXTINTOS / INEXISTENTES — hero ====== */
+  {
+    id: 'imipe', nombre: 'IMIPE',
+    rol: 'Instituto Morelense de Información Pública y Estadística — órgano garante autónomo',
+    url: 'imipe.org.mx', tipo: 'Órgano autónomo (extinto)',
+    estado: 'extinto', estadoLabel: 'Extinto por decreto',
+    fecha: '27 de enero de 2026',
+    diagnostico: 'El portal sigue cargando contenido del antiguo instituto, como archivo congelado, sin garantía de permanencia. Hay un banner flotante de aviso de cierre.',
+    leyTitulo: 'Lo que la ley dice — y se canceló',
+    leyTexto: 'El IMIPE era el órgano autónomo que vigilaba que el gobierno publicara la información pública. Cinco comisionados, con experiencia comprobable, decidían colegiadamente si un dato era reservado. Fue extinguido por decreto y reemplazado por una dependencia subordinada al Ejecutivo, con presupuesto recortado de 27 a 5 millones de pesos y decisión unipersonal de una sola funcionaria.',
+    enCementerio: true, esHero: true
+  },
+  {
+    id: 'transparencia-para-el-pueblo', nombre: '"Transparencia para el Pueblo de Morelos"',
+    rol: 'Sustituto del IMIPE, creado por decreto del 6 de mayo de 2026',
+    url: '(sin URL pública asignada)', tipo: 'Órgano sustituto',
+    estado: 'inexistente', estadoLabel: 'Sin portal',
+    fecha: 'Creado el 6 de mayo de 2026',
+    diagnostico: 'A trece días de su creación por decreto, el nuevo "órgano garante" del derecho a la información en Morelos no tiene portal funcional. Su homólogo federal tampoco: transparencia.gob.mx opera sin certificado de seguridad válido.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'El órgano que debe garantizar a los morelenses el derecho de acceso a la información pública no tiene siquiera dónde ser consultado. La ciudadanía no sabe dónde acudir, dónde quejarse, dónde solicitar información. La obligación legal existe sobre el papel; la institución existe sobre el papel. La realidad operativa no existe.',
+    enCementerio: true, esHero: true
+  },
+  {
+    id: 'transparencia-morelos-gob', nombre: 'Portal de Transparencia',
+    rol: 'transparencia.morelos.gob.mx — vitrina oficial de obligaciones del Estado',
+    url: 'transparencia.morelos.gob.mx', tipo: 'Portal de transparencia local',
+    estado: 'cascaron', estadoLabel: 'Cascarón · login con eslogan',
+    fecha: '',
+    diagnostico: 'Lo único visible es una pantalla de login y un eslogan: "Más allá de la obligación, hacia una transparencia proactiva". Cero información pública consultable por el ciudadano común.',
+    leyTitulo: 'Lo que la ley dice — Art. 70 LGTAIP',
+    leyTexto: 'Este portal debe publicar de oficio las 48 fracciones del Art. 70: directorio de funcionarios, sueldos, viáticos, contratos, padrón de proveedores, gastos en comunicación social, declaraciones patrimoniales, resultados de auditorías. No publica ninguna. Lo que el ciudadano ve es una puerta cerrada con un eslogan pintado encima.',
+    enCementerio: true, esHero: true
+  },
+  {
+    id: 'compras-morelos', nombre: 'Compras Morelos',
+    rol: 'Dirección General de Contrataciones de Bienes y Servicios',
+    url: 'compras.morelos.gob.mx', tipo: 'Sistema de contrataciones',
+    estado: 'cascaron', estadoLabel: 'En modernización permanente',
+    fecha: '',
+    diagnostico: 'El portal sí carga y muestra unas pocas licitaciones aisladas, pero bajo un aviso permanente de "modernización". Lo que el ciudadano encuentra es un catálogo incompleto, sin el padrón completo de proveedores ni los contratos por adjudicación directa que la ley obliga a publicar.',
+    leyTitulo: 'Lo que la ley dice — Art. 70 fracciones XXVI, XXVII y XXX LGTAIP',
+    leyTexto: 'Tres obligaciones convergen en este portal: publicar todos los contratos y convenios firmados por el gobierno; publicar todos los procedimientos de contratación, incluidas las adjudicaciones directas — que son la forma como se paga la publicidad oficial —; publicar el padrón de proveedores. El portal existe pero rinde una versión parcial. La "modernización" lleva tanto tiempo anunciada que se volvió cortina.',
+    enCementerio: true, esHero: true
+  },
+
+  /* ====== CASCARONES adicionales ====== */
+  {
+    id: 'transparenciamorelos-mx', nombre: 'transparenciamorelos.mx',
+    rol: 'Antiguo portal estatal de transparencia',
+    url: 'transparenciamorelos.mx', tipo: 'Portal de transparencia (anterior)',
+    estado: 'cascaron', estadoLabel: '"Sitio No Vigente"',
+    fecha: '',
+    diagnostico: 'Mensaje único: "Sitio No Vigente". Sin archivo migrado, sin redirección a un sucesor funcional.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Cuando se extingue una institución, su archivo histórico de información pública debe preservarse y permanecer consultable. Aquí no hay archivo ni puente: la memoria de transparencia se evaporó con el decreto.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'cdh-morelos', nombre: 'CDH Morelos',
+    rol: 'Comisión de Derechos Humanos del Estado',
+    url: 'cdhmorelos.org.mx/2026', tipo: 'Órgano autónomo',
+    estado: 'funciona', estadoLabel: 'Funcional (sólo en /2026)',
+    fecha: '',
+    diagnostico: 'La home raíz no muestra contenido — la URL operativa es cdhmorelos.org.mx/2026, donde sí hay informe anual, recomendaciones y secciones de transparencia. Es decir, el portal vive en un subdirectorio que el ciudadano debe adivinar.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Es buena noticia que sí publique informes y recomendaciones, pero la home institucional sigue sin redirigir al directorio funcional. Si el ciudadano teclea cdhmorelos.org.mx llega a una cáscara vacía. La transparencia formalmente existe; el acceso intuitivo, no.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'periodico-home', nombre: 'Periódico Oficial Tierra y Libertad',
+    rol: 'Órgano de publicación de leyes y decretos del Estado',
+    url: 'periodico.morelos.gob.mx', tipo: 'Publicaciones oficiales',
+    estado: 'funciona', estadoLabel: 'Funcional',
+    fecha: '',
+    diagnostico: 'Carga normal. Permite consultar ejemplares desde 1970 a la fecha, búsqueda por fecha, número y sumario.',
+    leyTitulo: '',
+    leyTexto: '',
+    enCementerio: false, esHero: false
+  },
+
+  /* ====== CAÍDOS ====== */
+  {
+    id: 'anticorrupcion', nombre: 'Secretaría Anticorrupción y Buen Gobierno',
+    rol: 'Dependencia creada en diciembre de 2025 que ahora aloja toda la transparencia estatal',
+    url: 'anticorrupcion.morelos.gob.mx', tipo: 'Secretaría',
+    estado: 'caido', estadoLabel: 'No responde · sin subdominio propio',
+    fecha: '',
+    diagnostico: 'Sin subdominio propio. El sitio del Estado tampoco enlaza un portal independiente para esta secretaría.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Es la dependencia que, en teoría, hereda las funciones del IMIPE y vigila a 120 sujetos obligados. Su sitio web no existe como subdominio propio. Sólo aparece como una carpeta dentro del portal del Estado.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'fiscalia-anticorrupcion', nombre: 'Fiscalía Especializada Anticorrupción',
+    rol: 'Órgano de procuración de justicia anticorrupción del Estado',
+    url: 'fiscaliaanticorrupcion.morelos.gob.mx', tipo: 'Fiscalía especializada',
+    estado: 'caido', estadoLabel: 'No responde',
+    fecha: '',
+    diagnostico: 'Servidor sin respuesta. Está referenciada por buscadores pero el sitio no se sirve.',
+    leyTitulo: 'Lo que la ley dice — Art. 70 LGTAIP',
+    leyTexto: 'Cualquier sujeto obligado debe tener portal accesible donde un ciudadano pueda consultar trámites, denuncias y resultados de investigaciones por corrupción. Aquí, nada.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'ceagua', nombre: 'CEAGUA',
+    rol: 'Comisión Estatal del Agua de Morelos',
+    url: 'ceagua.morelos.gob.mx', tipo: 'Organismo descentralizado',
+    estado: 'caido', estadoLabel: 'No responde',
+    fecha: '',
+    diagnostico: 'Servidor sin respuesta.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Los organismos descentralizados son sujetos obligados directos de la LGTAIP. Deben publicar concesiones de agua, contratos de operación, tarifas y resultados de auditorías. Sin sitio, ninguna de esas obligaciones es consultable.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'salud-subdominio', nombre: 'Secretaría de Salud (subdominio)',
+    rol: 'Dependencia rectora del sistema de salud estatal',
+    url: 'salud.morelos.gob.mx', tipo: 'Secretaría',
+    estado: 'caido', estadoLabel: 'No responde como subdominio',
+    fecha: '',
+    diagnostico: 'El subdominio independiente no responde. Sólo es navegable por la ruta interna del portal central.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Una de las secretarías con mayor volumen de contratación, compra de medicamentos y gasto operativo. No existe como subdominio público; el ciudadano debe navegar por el portal central, sin URL directa para consultar transparencia, denuncias o estadísticas sanitarias.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'sat-morelos', nombre: 'Sistema de Administración Tributaria estatal',
+    rol: 'Recaudación de impuestos estatales',
+    url: 'sat.morelos.gob.mx', tipo: 'Recaudación',
+    estado: 'caido', estadoLabel: 'No responde',
+    fecha: '',
+    diagnostico: 'Servidor sin respuesta.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Recauda el impuesto sobre la nómina y otros tributos estatales. Su existencia digital es condición mínima para que contribuyentes consulten obligaciones y pagos.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'servicios-morelos', nombre: 'Portal de Servicios',
+    rol: 'Ventanilla única de trámites estatales',
+    url: 'servicios.morelos.gob.mx', tipo: 'Trámites en línea',
+    estado: 'caido', estadoLabel: 'No responde',
+    fecha: '',
+    diagnostico: 'Servidor sin respuesta.',
+    leyTitulo: 'Lo que la ley dice — Art. 70 fracción XX LGTAIP',
+    leyTexto: 'Todo sujeto obligado debe publicar el listado de trámites y servicios, sus requisitos, costos y plazos. La ventanilla única digital, que sería el cumplimiento ideal de esa obligación, no funciona.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'fiscalia-subdominio', nombre: 'Fiscalía General (subdominio)',
+    rol: 'Variantes oficiales de subdominio que deberían redirigir a la Fiscalía',
+    url: 'fiscalia.morelos.gob.mx / fge.morelos.gob.mx', tipo: 'Subdominio',
+    estado: 'caido', estadoLabel: 'No responden',
+    fecha: '',
+    diagnostico: 'Las variantes oficiales que los buscadores guardan caché no responden. Sólo opera el dominio independiente.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'El ciudadano que llega buscando "fiscalía morelos" puede aterrizar en una URL inválida según la fuente que consulte. La fragmentación de URLs oficiales es, en sí misma, un obstáculo al acceso.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'educacion-subdominio', nombre: 'Secretaría de Educación (subdominio)',
+    rol: 'educacion.morelos.gob.mx redirige al portal central',
+    url: 'educacion.morelos.gob.mx', tipo: 'Subdominio',
+    estado: 'cascaron', estadoLabel: 'Redirige al portal central',
+    fecha: '',
+    diagnostico: 'No existe como sitio independiente. Cualquier consulta es redirigida al portal del Estado.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Sin URL directa propia, no hay portal de transparencia específico de la Secretaría de Educación. El cumplimiento queda diluido en el portal del Estado, donde sus obligaciones de Art. 70 son difíciles de localizar.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'hacienda-subdominio', nombre: 'Secretaría de Administración y Finanzas (subdominio)',
+    rol: 'hacienda.morelos.gob.mx redirige al portal central',
+    url: 'hacienda.morelos.gob.mx', tipo: 'Subdominio',
+    estado: 'cascaron', estadoLabel: 'Redirige al portal central',
+    fecha: '',
+    diagnostico: 'No existe como sitio independiente. Redirige al portal del Estado.',
+    leyTitulo: '',
+    leyTexto: 'Misma observación: la unidad responsable del presupuesto estatal carece de portal propio, lo que diluye el acceso ciudadano a su información financiera.',
+    enCementerio: false, esHero: false
+  },
+  {
+    id: 'contraloria-subdominio', nombre: 'Contraloría (subdominio)',
+    rol: 'contraloria.morelos.gob.mx redirige al portal central',
+    url: 'contraloria.morelos.gob.mx', tipo: 'Subdominio',
+    estado: 'cascaron', estadoLabel: 'Redirige al portal central',
+    fecha: '',
+    diagnostico: 'No existe como sitio independiente.',
+    leyTitulo: '',
+    leyTexto: 'Misma observación: las funciones de control interno del Ejecutivo no tienen portal propio.',
+    enCementerio: false, esHero: false
+  },
+
+  /* ====== INSEGUROS ====== */
+  {
+    id: 'iebem', nombre: 'IEBEM',
+    rol: 'Instituto de la Educación Básica del Estado de Morelos',
+    url: 'iebem.edu.mx', tipo: 'Organismo descentralizado',
+    estado: 'inseguro', estadoLabel: 'SSL inválido',
+    fecha: '',
+    diagnostico: 'Certificado de seguridad no verificable. Los navegadores marcan el sitio como inseguro.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'El instituto rector de la educación básica estatal — donde están las plantillas docentes, los presupuestos escolares, los programas de apoyo — opera con un sitio que cualquier navegador marca como inseguro. Los padres de familia que intentan consultarlo reciben una alerta roja antes de cualquier contenido.',
+    enCementerio: true, esHero: false
+  },
+  {
+    id: 'transparencia-gob-mx', nombre: '"Transparencia para el Pueblo" (federal)',
+    rol: 'Sustituto nacional del INAI',
+    url: 'transparencia.gob.mx', tipo: 'Órgano garante federal',
+    estado: 'inseguro', estadoLabel: 'SSL inválido',
+    fecha: '',
+    diagnostico: 'Certificado de seguridad no verificable. El sustituto del INAI a nivel federal tampoco tiene SSL bien configurado.',
+    leyTitulo: 'Lo que la ley dice',
+    leyTexto: 'Si el órgano garante nacional, sustituto del INAI, opera sin certificado válido, la nueva arquitectura de transparencia comienza herida desde su raíz federal. Es la misma falla, en el mismo expediente, a otra escala.',
+    enCementerio: true, esHero: false
+  }
+];
+
+/* ========================================================================
+   ESTADO — etiquetas legibles
+   ======================================================================== */
+const ESTADO_INFO = {
+  funciona:    { icono: '✓', clase: 'ok',  texto: 'Funciona' },
+  cascaron:    { icono: '⚠', clase: 'mid', texto: 'Cascarón / vacío' },
+  extinto:     { icono: '✗', clase: 'no',  texto: 'Extinto' },
+  inexistente: { icono: '✗', clase: 'no',  texto: 'No existe' },
+  bloqueado:   { icono: '✗', clase: 'no',  texto: 'Bloqueado' },
+  caido:       { icono: '✗', clase: 'no',  texto: 'No responde' },
+  inseguro:    { icono: '⚠', clase: 'mid', texto: 'Inseguro (SSL)' }
+};
+
+/* ========================================================================
+   NAVEGACIÓN POR PESTAÑAS
+   ======================================================================== */
+const tabs = document.querySelectorAll('nav.tabs button');
+const secciones = document.querySelectorAll('section.contenido');
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    tabs.forEach(b => b.classList.toggle('active', b === btn));
+    secciones.forEach(s => s.classList.toggle('activa', s.id === target));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+/* ========================================================================
+   CEMENTERIO — render de lápidas
+   ======================================================================== */
+const cementerioGrid = document.getElementById('cementerio-grid');
+const sitiosCementerio = sitios.filter(s => s.enCementerio);
+
+// Mapa de formas — distribución estratégica para que el cementerio no sea uniforme
+const formasPorId = {
+  'imipe':                      ['gotica', ''],
+  'transparencia-para-el-pueblo': ['rectangular', ''],
+  'transparencia-morelos-gob':  ['', ''],
+  'compras-morelos':            ['trapezoidal', ''],
+  'transparenciamorelos-mx':    ['rectangular', 'inclinada'],
+  'cdh-morelos':                ['gotica', ''],
+  'periodico-home':             ['', 'inclinada-der'],
+  'anticorrupcion':             ['rectangular', ''],
+  'fiscalia-anticorrupcion':    ['gotica', 'inclinada-der'],
+  'ceagua':                     ['trapezoidal', ''],
+  'salud-subdominio':           ['', 'inclinada'],
+  'sat-morelos':                ['rectangular', ''],
+  'servicios-morelos':          ['gotica', ''],
+  'iebem':                      ['trapezoidal', 'inclinada-der'],
+  'transparencia-gob-mx':       ['rectangular', ''],
+  'avisos-privacidad':          ['', 'inclinada']
+};
+
+function getFormaClasses(id) {
+  const [forma, inclinacion] = formasPorId[id] || ['', ''];
+  const out = [];
+  if (forma) out.push(`lapida--${forma}`);
+  if (inclinacion) out.push(`lapida--${inclinacion}`);
+  return out.join(' ');
+}
+
+sitiosCementerio.forEach(s => {
+  const lapida = document.createElement('div');
+  lapida.className = `lapida lapida--${s.estado} ${getFormaClasses(s.id)}`.trim();
+  lapida.dataset.id = s.id;
+  lapida.setAttribute('role', 'button');
+  lapida.setAttribute('tabindex', '0');
+  lapida.setAttribute('aria-label', `Ver expediente de ${s.nombre}`);
+
+  lapida.innerHTML = `
+    <div class="calaverita calaverita--izq" aria-hidden="true"></div>
+    <div class="calaverita calaverita--der" aria-hidden="true"></div>
+    <div class="epitafio">aquí yace</div>
+    <div class="nombre">${s.nombre}</div>
+    <div class="fecha">${s.fecha || s.url}</div>
+    <div class="estado-mini">${s.estadoLabel}</div>
+    <div class="musgo" aria-hidden="true"></div>
+    <div class="tierra" aria-hidden="true"></div>
+    <div class="cempasuchil-pie" aria-hidden="true"></div>
+    <div class="veladoras" aria-hidden="true">
+      <div class="veladora"><div class="cera"></div><div class="pabilo"></div><div class="flama"></div></div>
+      <div class="veladora"><div class="cera"></div><div class="pabilo"></div><div class="flama"></div></div>
+    </div>
+  `;
+
+  lapida.addEventListener('click', () => abrirModal(s.id));
+  lapida.addEventListener('keypress', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrirModal(s.id); }
+  });
+
+  cementerioGrid.appendChild(lapida);
+});
+
+/* ========================================================================
+   MODAL
+   ======================================================================== */
+const modalOverlay = document.getElementById('modal-overlay');
+const modalBody = document.getElementById('modal-body');
+const modalClose = document.getElementById('modal-close');
+
+function abrirModal(id) {
+  const s = sitios.find(x => x.id === id);
+  if (!s) return;
+
+  const capturaPath = `evidencia/${s.id}.png`;
+
+  modalBody.innerHTML = `
+    <p class="modal-eyebrow">${s.estadoLabel}</p>
+    <h3 id="modal-titulo">${s.nombre}</h3>
+    <p class="rol">${s.rol}</p>
+    <dl class="epitafio-completo">
+      ${s.fecha ? `<dt>Fecha</dt><dd>${s.fecha}</dd>` : ''}
+      <dt>URL probada</dt><dd>${s.url}</dd>
+      <dt>Tipo</dt><dd>${s.tipo}</dd>
+      ${s.diagnostico ? `<dt>Diagnóstico</dt><dd class="diagnostico">${s.diagnostico}</dd>` : ''}
+    </dl>
+    ${s.leyTexto ? `
+      <div class="leyenda-bloque">
+        <h4>${s.leyTitulo || 'Lo que la ley dice'}</h4>
+        <p>${s.leyTexto}</p>
+      </div>
+    ` : ''}
+    <div class="captura">
+      <h4>Captura</h4>
+      <img src="${capturaPath}" alt="Captura de pantalla de ${s.nombre}"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div class="captura-placeholder" style="display:none;">
+        Captura pendiente.<br>
+        Añadir el archivo como <code>evidencia/${s.id}.png</code>
+      </div>
+    </div>
+    <div class="modal-pie-papel" aria-hidden="true"></div>
+  `;
+
+  modalOverlay.classList.add('activo');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+
+function cerrarModal() {
+  modalOverlay.classList.remove('activo');
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', cerrarModal);
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) cerrarModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+
+/* ========================================================================
+   TABLA MAESTRA
+   ======================================================================== */
+const tablaBody = document.getElementById('tabla-body');
+const buscador = document.getElementById('buscador');
+const filtros = document.querySelectorAll('.filtro');
+const totalSpan = document.getElementById('total');
+const visiblesSpan = document.getElementById('visibles');
+
+let filtroActivo = 'todos';
+let query = '';
+
+function renderTabla() {
+  let lista = sitios.slice();
+
+  if (filtroActivo !== 'todos') {
+    if (filtroActivo === 'funciona') lista = lista.filter(s => s.estado === 'funciona');
+    else if (filtroActivo === 'no-funciona') lista = lista.filter(s => ['caido','extinto','inexistente','bloqueado','inseguro'].includes(s.estado));
+    else lista = lista.filter(s => s.estado === filtroActivo);
+  }
+
+  if (query.trim()) {
+    const q = query.toLowerCase();
+    lista = lista.filter(s =>
+      s.nombre.toLowerCase().includes(q) ||
+      s.url.toLowerCase().includes(q) ||
+      (s.tipo || '').toLowerCase().includes(q)
+    );
+  }
+
+  tablaBody.innerHTML = lista.map(s => {
+    const info = ESTADO_INFO[s.estado];
+    return `
+      <tr data-id="${s.id}">
+        <td class="estado-cell ${info.clase}">${info.icono}</td>
+        <td class="institucion-cell">${s.nombre}<span class="tipo">${s.tipo}</span></td>
+        <td class="url-cell">${s.url}</td>
+        <td class="estado-label">${s.estadoLabel}</td>
+        <td><button class="ver-btn" onclick="abrirModal('${s.id}')">Ver</button></td>
+      </tr>
+    `;
+  }).join('');
+
+  totalSpan.textContent = sitios.length;
+  visiblesSpan.textContent = lista.length;
+}
+
+filtros.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filtros.forEach(b => b.classList.toggle('activo', b === btn));
+    filtroActivo = btn.dataset.filtro;
+    renderTabla();
+  });
+});
+
+buscador.addEventListener('input', e => {
+  query = e.target.value;
+  renderTabla();
+});
+
+renderTabla();
+
+/* ========================================================================
+   MARCADOR VIVO — se recalcula sólo desde el array `sitios` y la fecha actual
+   ======================================================================== */
+function actualizarMarcador() {
+  const hoy = new Date();
+  const tomaProtesta = new Date(2024, 9, 1); // 1 oct 2024 (mes 0-indexed)
+
+  // Día del gobierno (1-indexed: 1 oct = día 1)
+  const msDia = 86400000;
+  const diaGobierno = Math.floor((hoy - tomaProtesta) / msDia) + 1;
+
+  // Duración en años, meses y días
+  let years  = hoy.getFullYear() - tomaProtesta.getFullYear();
+  let months = hoy.getMonth()    - tomaProtesta.getMonth();
+  let days   = hoy.getDate()     - tomaProtesta.getDate();
+  if (days < 0) {
+    months -= 1;
+    days += new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
+  }
+  if (months < 0) { years -= 1; months += 12; }
+  const plu = (n, s, p) => `${n} ${n === 1 ? s : p}`;
+  const duracion = `${plu(years, 'año', 'años')}, ${plu(months, 'mes', 'meses')} y ${plu(days, 'día', 'días')}`;
+
+  // Fecha formateada en español
+  const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const fechaFormateada = `${hoy.getDate()} de ${meses[hoy.getMonth()]} de ${hoy.getFullYear()}`;
+
+  // Conteos en vivo desde el array sitios
+  const total     = sitios.length;
+  const funcionan = sitios.filter(s => s.estado === 'funciona').length;
+  const fallan    = total - funcionan;
+  const pctFunc   = Math.round((funcionan / total) * 100);
+  const pctFall   = 100 - pctFunc;
+
+  // Desglose por categoría
+  const cats = {
+    caido:       { label: 'No responden',  count: 0 },
+    cascaron:    { label: 'Cascarones',    count: 0 },
+    extinto:     { label: 'Extintos',      count: 0 },
+    inexistente: { label: 'Sin portal',    count: 0 },
+    bloqueado:   { label: 'Bloqueados',    count: 0 },
+    inseguro:    { label: 'SSL inválido',  count: 0 }
+  };
+  sitios.forEach(s => { if (cats[s.estado]) cats[s.estado].count++; });
+
+  // Inyectar valores
+  const $ = (id) => document.getElementById(id);
+  const set = (id, val) => { const el = $(id); if (el) el.textContent = val; };
+
+  set('m-fecha', fechaFormateada);
+  // m-header-fecha queda fija en la fecha de auditoría (19 may 2026), no se mueve con el reloj
+  set('m-header-total', total);
+  set('m-dia', diaGobierno.toLocaleString('es-MX'));
+  set('m-duracion', duracion);
+  set('m-total', total);
+  set('m-funcionan', funcionan);
+  set('m-fallan', fallan);
+  set('m-pct-funcionan', pctFunc + '%');
+  set('m-pct-fallan', pctFall + '%');
+  set('m-detalle-num', fallan);
+  set('m-leyenda-fallan', `${fallan} no funcionan al ciudadano (${pctFall}%)`);
+  set('m-leyenda-funcionan', `${funcionan} funcionan (${pctFunc}%)`);
+
+  if ($('m-bar-fallan'))    $('m-bar-fallan').style.width = pctFall + '%';
+  if ($('m-bar-funcionan')) $('m-bar-funcionan').style.width = pctFunc + '%';
+
+  // Desglose
+  const grid = $('m-detalle-grid');
+  if (grid) {
+    grid.innerHTML = Object.entries(cats)
+      .filter(([, c]) => c.count > 0)
+      .sort((a, b) => b[1].count - a[1].count)
+      .map(([k, c]) => `<div class="detalle-item ${k}"><span class="nombre">${c.label}</span><span class="cuenta">${c.count}</span></div>`)
+      .join('');
+  }
+}
+actualizarMarcador();
+</script>
+
+</body>
+</html>

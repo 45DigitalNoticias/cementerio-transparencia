@@ -1,0 +1,37 @@
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+ehthumbs.db
+
+# Archivos temporales de editores
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Archivos temporales de Office (cuando alguien abre los .docx)
+~$*.docx
+~$*.xlsx
+
+# Claude / herramientas de IA
+.claude/
+.cursor/
+
+# Logs y temporales
+*.log
+*.tmp
+
+# Node (por si en el futuro se usa)
+node_modules/
+
+# Python (por si se añade un script de procesamiento)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build artifacts
+dist/
+build/
