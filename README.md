@@ -17,7 +17,7 @@ Documenta el período del primer año y medio de gobierno de **Margarita Gonzál
 
 ## Cómo navegarlo
 
-Abre [cementerio-transparencia.html](cementerio-transparencia.html) en cualquier navegador moderno. Es un archivo único, autocontenido, sin dependencias externas más allá de las fuentes de Google.
+Abre [index.html](index.html) o simplemente entra a la URL del repo en GitHub Pages. Es un archivo único, autocontenido, sin dependencias externas más allá de las fuentes de Google.
 
 Siete secciones, accesibles desde el menú superior:
 
@@ -38,7 +38,7 @@ Siete secciones, accesibles desde el menú superior:
 _expediente-opacidad-morelos/
 ├── README.md                       ← este archivo
 ├── LICENSE                         ← CC BY-NC 4.0
-├── cementerio-transparencia.html   ← pieza principal, autocontenida
+├── index.html                      ← pieza principal, autocontenida (servida en la raíz de GitHub Pages)
 ├── dashboard-sitios-gobierno.md    ← bitácora de trabajo (datos crudos, pendientes)
 ├── datos/
 │   └── plan_apertura_TP.csv        ← evidencia primaria: el plan que Transparencia para el Pueblo
