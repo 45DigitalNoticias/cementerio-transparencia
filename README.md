@@ -9,7 +9,7 @@ Auditoría visual e interactiva de los sitios oficiales del gobierno del estado 
 
 Un inventario, sitio por sitio, de las páginas web del gobierno estatal de Morelos y del aparato federal de transparencia que las regula — documentando cuáles funcionan, cuáles son cáscaras decorativas, cuáles están caídas y cuáles nunca tuvieron portal.
 
-El expediente parte de una observación simple: la Ley General de Transparencia y Acceso a la Información Pública obliga a publicar **48 fracciones de información de oficio**, sin necesidad de que nadie las pida. En la práctica, los portales donde esa información debería estar muestran un eslogan, una pantalla de login o un error de servidor.
+El expediente parte de una observación simple: la Ley General de Transparencia y Acceso a la Información Pública obliga a publicar **46 fracciones de información de oficio**, sin necesidad de que nadie las pida. En la práctica, los portales donde esa información debería estar muestran un eslogan, una pantalla de login o un error de servidor.
 
 ## Quién es responsable
 
@@ -29,7 +29,7 @@ Siete secciones, accesibles desde el menú superior:
 | **Tabla maestra** | Los 29 sitios auditados, con filtros por estado y buscador |
 | **Comparativa** | IMIPE (autónomo) vs. "Transparencia para el Pueblo de Morelos" (subordinado) |
 | **Cronología** | Quince meses del desmantelamiento, marzo 2025 → mayo 2026 |
-| **Glosario** | LGTAIP, Art. 70, padrón de proveedores, adjudicación directa, etc., en lenguaje claro |
+| **Glosario** | LGTAIP, Art. 65, padrón de proveedores, adjudicación directa, etc., en lenguaje claro |
 | **Fuentes** | Toda la evidencia documental — prensa, organismos, datos abiertos |
 
 ## Lo que contiene este repositorio

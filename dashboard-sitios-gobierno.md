@@ -5,7 +5,7 @@
 **Última actualización:** 2026-05-19
 **Estado:** abierto, en construcción
 
-> **Tesis editorial del expediente.** Las autoridades responden a cada cuestionamiento con la misma fórmula: *"pidan la información por transparencia"*. Pero la Ley General de Transparencia (Art. 70) obliga a publicarla **proactivamente**, sin necesidad de solicitud. Este dashboard documenta, sitio por sitio, dónde se incumple esa obligación en Morelos — y cómo el desmantelamiento del IMIPE en 2026 convirtió la opacidad en política de Estado.
+> **Tesis editorial del expediente.** Las autoridades responden a cada cuestionamiento con la misma fórmula: *"pidan la información por transparencia"*. Pero la Ley General de Transparencia (Art. 65) obliga a publicarla **proactivamente**, sin necesidad de solicitud. Este dashboard documenta, sitio por sitio, dónde se incumple esa obligación en Morelos — y cómo el desmantelamiento del IMIPE en 2026 convirtió la opacidad en política de Estado.
 
 ---
 
@@ -39,7 +39,7 @@
 | Institución | URL probada | Estado | Lo que muestra | Implicación |
 |---|---|---|---|---|
 | **Transparencia Morelos (portal original)** | https://transparenciamorelos.mx | ⚠️ Carga | Único mensaje: **"Sitio No Vigente"** | Sin archivo migrado, sin redirección a sucesor — la memoria de transparencia se evapora |
-| **Portal local de Transparencia** | https://transparencia.morelos.gob.mx | ⚠️ Carga | Página de **login** + eslogan *"Más allá de la obligación, hacia una transparencia proactiva"* | Vitrina vacía. No hay obligaciones de Art. 70 publicadas para el ciudadano común |
+| **Portal local de Transparencia** | https://transparencia.morelos.gob.mx | ⚠️ Carga | Página de **login** + eslogan *"Más allá de la obligación, hacia una transparencia proactiva"* | Vitrina vacía. No hay obligaciones de Art. 65 publicadas para el ciudadano común |
 | **IMIPE (extinto)** | https://imipe.org.mx | ⚠️ Carga | Contenido del antiguo instituto + banner *aviso_cierre_imipe.jpg* | Información congelada; ningún indicador de durabilidad |
 | **Compras Morelos / Contratos** | https://compras.morelos.gob.mx | 🔒 Bloquea | HTTP 403 Forbidden / 429 Too Many Requests intermitentes | Bloqueo activo a consultas externas — donde deben estar contratos y licitaciones |
 | **CDH Morelos** | https://cdhmorelos.org.mx | ⚠️ Carga | Sólo cabecera "CDHMORELOS", sin contenido | Sitio cascarón |
@@ -62,20 +62,20 @@
 
 ---
 
-## 3. Mapa de incumplimiento — Art. 70 LGTAIP
+## 3. Mapa de incumplimiento — Art. 65 LGTAIP
 
 > La Ley General de Transparencia y Acceso a la Información Pública obliga a **publicar proactivamente** las siguientes fracciones. No hace falta solicitud: deben estar disponibles, en formato abierto, en el portal del sujeto obligado y en la Plataforma Nacional de Transparencia.
 
-| Fracción Art. 70 | Obligación | Dónde debería estar | Estado al 2026-05-19 |
+| Fracción Art. 65 | Obligación | Dónde debería estar | Estado al 2026-05-19 |
 |---|---|---|---|
-| **XXIII** | Gastos en comunicación social y publicidad oficial | Portal de transparencia local + portal del sujeto obligado | ⚠️ No localizable en portal local (es página de login) |
-| **XXVI** | Concesiones, contratos, convenios, permisos | compras.morelos.gob.mx | 🔒 Bloqueado |
-| **XXVII** | Procedimientos de contrataciones (adjudicaciones, invitaciones, licitaciones) | compras.morelos.gob.mx | 🔒 Bloqueado |
+| **XXI** | Gastos en comunicación social y publicidad oficial | Portal de transparencia local + portal del sujeto obligado | ⚠️ No localizable en portal local (es página de login) |
+| **XXV** | Concesiones, contratos, convenios, permisos | compras.morelos.gob.mx | 🔒 Bloqueado |
+| **XXVI** | Procedimientos de contrataciones (adjudicaciones, invitaciones, licitaciones) | compras.morelos.gob.mx | 🔒 Bloqueado |
 | **XXX** | Padrón de proveedores y contratistas | compras.morelos.gob.mx | 🔒 Bloqueado |
 | Federal complementario | Programa Anual de Comunicación Social 2025 (Ley General de Comunicación Social, Art. 9) | Coordinación General de Comunicación Social del Estado | ❓ No publicado en portal visible |
 | Federal complementario | Padrón Nacional de Medios Impresos (PNMI) — verificación de OEM Morelos | pnmi.segob.gob.mx | ⏳ Pendiente de verificar (federal, sí carga) |
 
-**Lectura editorial.** Cuatro de las cuatro fracciones del Art. 70 directamente relacionadas con la pauta publicitaria oficial están bloqueadas, ausentes o vacías en los portales del Estado de Morelos. La obligación legal no se traduce en información consultable.
+**Lectura editorial.** Cuatro de las fracciones del Art. 65 directamente relacionadas con la pauta publicitaria oficial están bloqueadas, ausentes o vacías en los portales del Estado de Morelos. La obligación legal no se traduce en información consultable.
 
 ---
 
