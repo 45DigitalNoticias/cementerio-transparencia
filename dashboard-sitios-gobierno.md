@@ -2,7 +2,7 @@
 
 **Expediente editorial — 45 Digital Noticias**
 **Inicio del expediente:** 2026-05-19
-**Última actualización:** 2026-05-19
+**Última actualización:** 2026-05-22 (sincronizado con `index.html`)
 **Estado:** abierto, en construcción
 
 > **Tesis editorial del expediente.** Las autoridades responden a cada cuestionamiento con la misma fórmula: *"pidan la información por transparencia"*. Pero la Ley General de Transparencia (Art. 65) obliga a publicarla **proactivamente**, sin necesidad de solicitud. Este dashboard documenta, sitio por sitio, dónde se incumple esa obligación en Morelos — y cómo el desmantelamiento del IMIPE en 2026 convirtió la opacidad en política de Estado.
@@ -14,51 +14,87 @@
 | # | Fecha | Sitios revisados | Hallazgos clave |
 |---|---|---|---|
 | 001 | 2026-05-19 | 29 dominios y subdominios estatales | 11 funcionan, 7 cascarones, 7 caídos, 2 inseguros, 1 extinto, 1 inexistente (18 con defunción operativa). Confirmado: el órgano sustituto del IMIPE *no tiene portal* a 13 días de su decreto. |
+| 002 | 2026-05-22 | Sincronización dashboard ↔ `index.html` | Tabla 2.1 sube de 10 a 11 funcionales (CDH `/2026` y Periódico Oficial home reclasificados a OK tras verificación más fina). Avisos de Privacidad baja a cascarón. Se incorporan tres subdominios redirigidos (educación, hacienda, contraloría) como cascarones para reflejar el inventario completo del HTML. |
 
 ---
 
 ## 2. Inventario técnico — estado de sitios oficiales
 
-### 2.1. Sitios funcionales (cargan y muestran contenido sustantivo)
+> **Sincronizado con el array `sitios` del `index.html`** (29 entradas).
+> Cuando un sitio cambie de estado en la verificación, actualizar **ambos** archivos.
 
-| Institución | URL probada | Estado | Tipo de sujeto obligado | Observaciones |
-|---|---|---|---|---|
-| Portal principal del Estado | https://www.morelos.gob.mx | ✅ OK | Poder Ejecutivo | Funcional |
-| Congreso del Estado | https://www.congresomorelos.gob.mx | ✅ OK | Poder Legislativo | Funcional |
-| ESAF (Auditoría Superior) | https://esaf-morelos.gob.mx | ✅ OK | Órgano técnico del Legislativo | Funcional |
-| Tribunal Superior de Justicia | https://tsjmorelos.gob.mx | ✅ OK | Poder Judicial | Funcional |
-| Tribunal de Justicia Administrativa | https://tjamorelos.gob.mx | ✅ OK | Órgano jurisdiccional | Funcional |
-| Fiscalía General del Estado | https://www.fiscaliamorelos.gob.mx | ✅ OK | Órgano constitucional autónomo | Funcional (sólo con dominio independiente, no con subdominios `*.morelos.gob.mx`) |
-| Denuncia Digital de la Fiscalía | https://denuncia.fiscaliamorelos.gob.mx | ✅ OK | Sistema de la Fiscalía | Funcional |
-| Periódico Oficial *Tierra y Libertad* (listado) | https://periodico.morelos.gob.mx/ejemplares | ✅ OK | Publicaciones oficiales | Listado de ejemplares carga; la home no (ver 2.2) |
-| IMPEPAC | https://impepac.mx → https://jornada.impepac.mx | ✅ OK | Órgano autónomo electoral | Carga vía redirect 302 hacia un subdominio "jornada", patrón inusual |
-| Avisos de Privacidad | https://avisosprivacidad.morelos.gob.mx | ✅ Carga | Anexo Contraloría | Funcional pero sin información sustantiva |
+### 2.1. Sitios funcionales (11) — cargan y muestran contenido sustantivo
 
-### 2.2. Sitios con carga parcial, contenido nulo o decorativo
+| Institución | URL probada | Tipo de sujeto obligado | Observaciones |
+|---|---|---|---|
+| Portal principal del Estado | https://www.morelos.gob.mx | Poder Ejecutivo | Carga normal |
+| Congreso del Estado | https://www.congresomorelos.gob.mx | Poder Legislativo | Carga normal |
+| ESAF (Auditoría Superior) | https://esaf-morelos.gob.mx | Órgano técnico del Legislativo | Carga normal |
+| Tribunal Superior de Justicia | https://tsjmorelos.gob.mx | Poder Judicial | Carga normal |
+| Tribunal de Justicia Administrativa | https://tjamorelos.gob.mx | Órgano jurisdiccional | Carga normal |
+| Fiscalía General del Estado | https://www.fiscaliamorelos.gob.mx | Órgano constitucional autónomo | Carga sólo con su dominio independiente; las variantes de subdominio (`fiscalia.*`, `fge.*`) no responden (ver 2.3) |
+| Denuncia Digital de la Fiscalía | https://denuncia.fiscaliamorelos.gob.mx | Sistema de la Fiscalía | Carga normal. Requiere Llave MX |
+| Periódico Oficial — Listado de ejemplares | https://periodico.morelos.gob.mx/ejemplares | Publicaciones oficiales | Sólo carga esta ruta; la home también pero por ruta directa |
+| Periódico Oficial *Tierra y Libertad* (home) | https://periodico.morelos.gob.mx | Publicaciones oficiales | Carga normal — permite consulta de ejemplares 1970-actual |
+| IMPEPAC | https://impepac.mx → https://jornada.impepac.mx | Órgano autónomo electoral | Redirect 302 hacia subdominio "jornada", patrón inusual |
+| CDH Morelos | https://cdhmorelos.org.mx/2026 | Órgano autónomo | La home raíz queda vacía; el directorio operativo vive en `/2026` |
 
-| Institución | URL probada | Estado | Lo que muestra | Implicación |
-|---|---|---|---|---|
-| **Transparencia Morelos (portal original)** | https://transparenciamorelos.mx | ⚠️ Carga | Único mensaje: **"Sitio No Vigente"** | Sin archivo migrado, sin redirección a sucesor — la memoria de transparencia se evapora |
-| **Portal local de Transparencia** | https://transparencia.morelos.gob.mx | ⚠️ Carga | Página de **login** + eslogan *"Más allá de la obligación, hacia una transparencia proactiva"* | Vitrina vacía. No hay obligaciones de Art. 65 publicadas para el ciudadano común |
-| **IMIPE (extinto)** | https://imipe.org.mx | ⚠️ Carga | Contenido del antiguo instituto + banner *aviso_cierre_imipe.jpg* | Información congelada; ningún indicador de durabilidad |
-| **Compras Morelos / Contratos** | https://compras.morelos.gob.mx | 🔒 Bloquea | HTTP 403 Forbidden / 429 Too Many Requests intermitentes | Bloqueo activo a consultas externas — donde deben estar contratos y licitaciones |
-| **CDH Morelos** | https://cdhmorelos.org.mx | ⚠️ Carga | Sólo cabecera "CDHMORELOS", sin contenido | Sitio cascarón |
-| **Periódico Oficial (home)** | https://periodico.morelos.gob.mx | ⚠️ Carga | *"Cargando información, por favor espere"* indefinido | Home rota; sólo es navegable por URLs internas conocidas |
+### 2.2. Cascarones (7) — cargan pero no rinden información sustantiva
 
-### 2.3. Sitios oficiales que NO existen o están caídos
+| Institución | URL probada | Lo que muestra | Implicación |
+|---|---|---|---|
+| **Portal de Transparencia (local)** | https://transparencia.morelos.gob.mx | Página de **login** + eslogan *"Más allá de la obligación, hacia una transparencia proactiva"* | Vitrina vacía. Las 46 fracciones del Art. 65 no están publicadas para el ciudadano común |
+| **transparenciamorelos.mx** (portal anterior) | https://transparenciamorelos.mx | Único mensaje: **"Sitio No Vigente"** | Sin archivo migrado, sin redirección a sucesor |
+| **Compras Morelos** | https://compras.morelos.gob.mx | Pocas licitaciones aisladas bajo aviso permanente de "modernización" | Catálogo incompleto. Sin padrón completo de proveedores ni contratos por adjudicación directa |
+| **Avisos de Privacidad** | https://avisosprivacidad.morelos.gob.mx | Sólo cabecera institucional, sin avisos consultables | Cumple con existir, no con informar |
+| **Secretaría de Educación (subdominio)** | educacion.morelos.gob.mx | Redirige al portal central del Estado | Sin URL directa propia; transparencia diluida |
+| **Secretaría de Administración y Finanzas (subdominio)** | hacienda.morelos.gob.mx | Redirige al portal central del Estado | Sin URL directa propia |
+| **Contraloría (subdominio)** | contraloria.morelos.gob.mx | Redirige al portal central del Estado | Sin URL directa propia |
+
+### 2.3. Caídos (7) — servidor sin respuesta
 
 | Institución | URL esperada | Error | Implicación |
 |---|---|---|---|
-| **Secretaría Anticorrupción y Buen Gobierno** | anticorrupcion.morelos.gob.mx | ECONNREFUSED | Sin subdominio propio. Sólo ruta dentro del portal del Estado |
-| **"Transparencia para el Pueblo de Morelos"** (sustituto del IMIPE, decreto 2026-05-06) | sin URL pública conocida | n/d | **Sin portal a 13 días de su creación** |
-| **Fiscalía Especializada en Combate a la Corrupción** | fiscaliaanticorrupcion.morelos.gob.mx | ECONNREFUSED | Servidor sin respuesta — referenciado por buscadores |
-| Fiscalía General (variantes oficiales) | fiscalia.morelos.gob.mx, fge.morelos.gob.mx | ECONNREFUSED | Variantes inválidas; sólo opera bajo dominio independiente |
+| **Secretaría Anticorrupción y Buen Gobierno** | anticorrupcion.morelos.gob.mx | ECONNREFUSED | Sin subdominio propio. La dependencia que hereda funciones del IMIPE no tiene portal |
+| **Fiscalía Especializada Anticorrupción** | fiscaliaanticorrupcion.morelos.gob.mx | ECONNREFUSED | Servidor sin respuesta — referenciado por buscadores |
+| Fiscalía General (variantes de subdominio) | fiscalia.morelos.gob.mx, fge.morelos.gob.mx | ECONNREFUSED | Variantes inválidas; sólo opera bajo dominio independiente |
 | Sistema de Administración Tributaria estatal | sat.morelos.gob.mx | ECONNREFUSED | Caído |
 | CEAGUA — Comisión Estatal del Agua | ceagua.morelos.gob.mx | ECONNREFUSED | Caído |
 | Secretaría de Salud (subdominio) | salud.morelos.gob.mx | ECONNREFUSED | Caído como subdominio independiente |
 | Portal de Servicios | servicios.morelos.gob.mx | ECONNREFUSED | Caído |
-| IEBEM — Educación Básica | iebem.edu.mx | SSL inválido | Navegadores marcan inseguro |
+
+### 2.4. Inseguros (2) — cargan pero los navegadores los marcan como peligrosos
+
+| Institución | URL | Falla | Implicación |
+|---|---|---|---|
+| IEBEM — Educación Básica | iebem.edu.mx | SSL inválido | Navegadores marcan inseguro antes de cualquier contenido |
 | **"Transparencia para el Pueblo"** (homólogo federal) | transparencia.gob.mx | SSL inválido | El sustituto del INAI a nivel nacional tampoco tiene certificado válido |
+
+### 2.5. Extinto (1)
+
+| Institución | URL | Estado | Implicación |
+|---|---|---|---|
+| **IMIPE** | https://imipe.org.mx | Contenido del antiguo instituto + banner *aviso_cierre_imipe.jpg* | Archivo congelado, sin garantía de permanencia |
+
+### 2.6. Inexistente (1)
+
+| Institución | URL esperada | Estado | Implicación |
+|---|---|---|---|
+| **"Transparencia para el Pueblo de Morelos"** (sustituto del IMIPE, decreto 2026-05-06) | sin URL pública asignada | n/d | **Sin portal a 13 días de su creación** |
+
+### 2.7. Resumen cuantitativo
+
+| Categoría | Cuenta |
+|---|---|
+| ✅ Funcionan | 11 |
+| ⚠️ Cascarones | 7 |
+| ❌ Caídos | 7 |
+| 🔓 Inseguros (SSL) | 2 |
+| ✝ Extintos | 1 |
+| ⊘ Inexistentes | 1 |
+| **TOTAL** | **29** |
+
+**18 sitios (62 %) no le sirven al ciudadano.** **11 sitios (38 %) funcionan.**
 
 ---
 

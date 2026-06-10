@@ -25,7 +25,7 @@ Siete secciones, accesibles desde el menú superior:
 |---|---|
 | **Apertura** | Manifiesto editorial y marcador vivo con conteos en tiempo real |
 | **Análisis** | La columna *"El timo de la transparencia"* (~950 palabras) |
-| **Cementerio** | 16 lápidas clickeables — cada una con expediente, captura de evidencia y línea legal incumplida |
+| **Cementerio** | 14 lápidas clickeables — cada una con expediente, captura de evidencia y línea legal incumplida |
 | **Tabla maestra** | Los 29 sitios auditados, con filtros por estado y buscador |
 | **Comparativa** | IMIPE (autónomo) vs. "Transparencia para el Pueblo de Morelos" (subordinado) |
 | **Cronología** | Quince meses del desmantelamiento, marzo 2025 → mayo 2026 |
@@ -35,7 +35,7 @@ Siete secciones, accesibles desde el menú superior:
 ## Lo que contiene este repositorio
 
 ```
-_expediente-opacidad-morelos/
+CEMENTERIO_MORELOS/
 ├── README.md                       ← este archivo
 ├── LICENSE                         ← CC BY-NC 4.0
 ├── index.html                      ← pieza principal, autocontenida (servida en la raíz de GitHub Pages)
